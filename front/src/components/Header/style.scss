@@ -1,0 +1,107 @@
+.header {
+  text-align: center;
+  background-image: url(https://i0.wp.com/www.thebetterfish.com/wp-content/uploads/2020/04/Australis-Barramundi-2020-Why2-Tablet.png?ssl=1);
+background-size: 100%;
+  background-position-y: -12em; 
+width: 100vw;
+position: fixed;
+position: absolute;
+}
+.title{
+  margin: 4rem;
+  font-size: 4rem;
+  
+}
+
+ .whitePlace {padding-bottom: 11em;}
+
+
+ .pageContainer{
+  display: flex;
+  flex-wrap: wrap;
+} 
+
+.page1, .page2
+  {display: flex;
+    flex-direction: column;
+    width: 37%;
+  }
+
+  .formMy{
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+  }
+
+
+@media only screen and (max-width: 425px) {
+  .header{background-size: cover;
+  }
+
+//.title {font-size: smaller;margin:1em}
+  .whitePlace {padding-bottom: 16.3em;}
+
+  
+  }
+
+ 
+
+    /* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 1024px) {
+  .header{background-position-y: 15em;}
+}
+
+
+@media only screen and (min-width: 821px) {
+  .pageContainer{
+    width: 55%;
+    margin: 4.62rem;
+    background-image: url(https://media.discordapp.net/attachments/813772071577976853/817041101650657300/book.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:100%;
+  }    
+
+  .page1 , .page2{
+    overflow-y: auto;
+    scrollbar-width: thin;
+  }
+
+  .page1{
+    margin: 9px 50px 9px 68px;
+    width: 40.5%;
+  }
+
+
+  .page2{
+    height: 28rem;
+    margin: 9px 68px 9px 50px;
+  }
+
+
+}
+
+@media only screen and (max-width: 820px) {
+
+  .pageContainer{
+    display: flex;
+     width: 100%;
+    flex-wrap: wrap;
+  } 
+
+  .inputFormMy{
+    font-size: 0.9rem;
+  }
+
+
+  .page1 , .page2{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .formMy{
+    background-image: none !important;
+  }
+}

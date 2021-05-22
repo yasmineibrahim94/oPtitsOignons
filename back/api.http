@@ -1,0 +1,255 @@
+@protocol= http
+@domainname= apicuisine.herokuapp.com
+@path=api
+@baseUrl = {{protocol}}://{{domainname}}/{{path}}
+
+                                                                        #######################
+                                                                        ### SIGN IN & LOGIN ###
+                                                                        #######################
+
+### signin
+POST {{baseUrl}}/signin
+Content-Type: application/json
+
+{
+    "email": "jufesfqp@gmail.fr",
+    "password": "pEaefsfs122zz",
+    "confirmPassword": "pEaefsfs122zz",
+    "image": "/monImage.jpg",
+    "pseudo": "pEaefsfs122zz"
+    
+}
+
+
+### login
+POST {{baseUrl}}/login
+Content-Type: application/json
+
+{
+    "email": "idrisdu94@gmail.com",
+    "password": "Idrisdu94"
+
+}
+
+### logout
+GET {{baseUrl}}/logout
+
+
+                                                                        #######################
+                                                                        ###      USER       ###
+                                                                        #######################
+
+
+### edit profil
+PATCH {{baseUrl}}/user
+Content-Type: application/json
+
+{
+    "email": "unautreemail@gmail.com",
+    "password": "unautrepassword",
+    "pseudo": "un autre pseudo"
+
+}
+
+### tout les users
+GET {{baseUrl}}/user
+
+### un user
+GET {{baseUrl}}/user/9
+
+
+
+                                                                        #######################
+                                                                        ###     RECIPE      ###
+                                                                        #######################
+
+
+### recette publique
+GET {{baseUrl}}/public/recipes
+
+### new recette
+POST {{baseUrl}}/user/newrecipe
+Content-Type: application/json
+
+{
+    "name": "la tarte à l'oignon ",
+    "prepare_time": "00:15:00",
+    "cooking_time": "00:10:00",
+    "image": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic.pratique.fr%2Fimages%2Funsized%2Fta%2Ftarte-citron.jpg&f=1&nofb=1",
+    "part_number": 1,
+    "part_type": "tarte",
+    "share": "true",
+    "category_id": 2,
+    "description": "ouvent complétée par une meringue et devient alors une tarte au citron meringuée.",
+    "difficulty_id": 2 ,
+    "label": ["huile", "oignon", "fromage" ],
+    "mesure_unit": ["cuilliere", "kg", "kg"],
+    "allergy_id": [null,7,null],
+    "quantity": [4,2,1]
+
+}
+
+### une recettes
+GET {{baseUrl}}/recipe/101
+
+### toutes les recettes
+GET {{baseUrl}}/recipes
+
+### all unser's recipes
+GET {{baseUrl}}/recipes/user
+
+### change status
+POST {{baseUrl}}/recipe/101/share
+Content-Type: application/json
+
+{
+    "share": false
+
+}
+
+### change recipe parts 
+
+PATCH {{baseUrl}}/recipe/101
+Content-Type: application/json
+
+{
+    "name": "The Big recette ",
+    "prepare_time": "00:15:00",
+    "cooking_time": "00:10:00",
+    "image": "toto.jpg",
+    "part_number": 1,
+    "part_type": "portions",
+    "share": "true",
+    "category_id": 1,
+    "user_id": 2,
+    "description": "tchoutchou"
+    
+}
+
+### COPY RECIPE FROM OTHER USER
+POST {{baseUrl}}/copy/recipe/38
+
+
+PATCH {{baseUrl}}/ingredient/recipe/13
+Content-Type: application/json
+
+{   
+    "ingredient" : [],
+    "mesure_unit": [],
+    "allergie_id": [],
+    "quantity": []
+
+}
+
+
+### delete a recipe
+DELETE {{baseUrl}}/recipe/del/50
+
+
+                                                                        #######################
+                                                                        ### CAT/DIF/ALLERGY ###
+                                                                        #######################
+
+
+### find all allergy
+GET {{baseUrl}}/allergy
+
+### find all difficulty
+GET {{baseUrl}}/difficulty
+### Voir les commentaire d'une recette
+GET {{baseUrl}}/recipe/1/reviews
+### Ajout de commentaire sur une recette
+POST {{baseUrl}}/user/newrecipe
+Content-Type: application/json
+
+{
+    "name": "la tarte de Bernard ",
+    "prepare_time": "00:15:00",
+    "cooking_time": "00:10:00",
+    "image": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic.pratique.fr%2Fimages%2Funsized%2Fta%2Ftarte-citron.jpg&f=1&nofb=1",
+    "part_number": 1,
+    "part_type": "tarte",
+    "share": "true",
+    "category_id": 2,
+    "user_id": 1,
+    "description": "MA recette secrete  que je partage!!!",
+    "difficulty_id": 2 ,
+    "label": ["oeufs", "lait", "Moutarde","farine2","piment3" ],
+    "mesure_unit": ["U", "ml", "kg", "kg","kg"],
+    "allergy_id": [ null ,7, null , 1 , null],
+    "quantity": [1,250,2,3,3]
+}
+
+### find all categories
+GET {{baseUrl}}/categories
+
+### une catégorie
+GET {{baseUrl}}/category/2
+
+### find category's recipe
+GET {{baseUrl}}/categories/1/recipes
+
+### find all user's category
+GET {{baseUrl}}/user/recepies/category
+
+
+                                                                        #######################
+                                                                        ###     REVIEWS     ###
+                                                                        #######################
+
+
+### adding review of the recipe
+POST {{baseUrl}}/add/review/recipe/101
+Content-Type: application/json
+
+{
+    "rate": 2,
+    "content": "une null recette"
+
+}
+
+### all review of the recipe
+GET {{baseUrl}}/recipe/1/reviews
+
+### all user's review
+GET {{baseUrl}}/user/1/reviews
+
+
+                                                                        #######################
+                                                                        ###      LIST       ###
+                                                                        #######################
+
+
+### create list
+POST {{baseUrl}}/user/create-grocery
+Content-Type: application/json
+
+{
+    "name": "tomasz mon amour"
+
+}
+
+### view grocery for one user
+GET {{baseUrl}}/grocery
+
+### del all user's list
+DELETE {{baseUrl}}/grocery/del/all
+
+### del one user's list 
+DELETE {{baseUrl}}/grocery/del/28
+
+### Add Item to List
+POST {{baseUrl}}/add-items/grocery/28
+Content-Type: application/json
+
+{
+    "name": "oeufs"
+
+}
+
+### delete one item from the list
+DELETE {{baseUrl}}/item/del/35
+
+
+
+

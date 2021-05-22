@@ -1,0 +1,27 @@
+.createProfilBookContainer {
+  width: 20%;
+}
+
+.starterBook {
+  width: 160%;
+  height: 19rem;
+  background-image: url(https://jooinn.com/images/old-book-texture-15.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  font-size: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  writing-mode: horizontal-tb;
+  padding: 1rem;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: black;
+}
+
+.starterBook:hover {
+  color: black;
+  font-style: italic;
+}

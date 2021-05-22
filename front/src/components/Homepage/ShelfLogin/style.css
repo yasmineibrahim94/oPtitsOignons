@@ -1,0 +1,8 @@
+.ShelfSignIn {
+  background-image: url(https://images-ext-1.discordapp.net/external/fSVKzlA1sT3RkOwEscj7UE9pPPt5O10bo35WkiOma4o/http/www.wallfizz.com/art-design/inclassable/3097-mur-en-bois-WallFizz.jpg?width=400&height=300);
+
+  display: flex;
+  padding-top: 1.5rem;
+  align-items: flex-end;
+  justify-content: space-evenly;
+}

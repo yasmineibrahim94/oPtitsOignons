@@ -1,0 +1,128 @@
+.Search_container{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: radial-gradient(circle, rgba(245,243,241,1) 39%, rgba(220,185,145,1) 76%, rgba(92,47,16,1) 97%);
+
+}
+
+  //padding: 1.5em;
+  
+
+  .checkbox_label {font-weight: bold;
+font-size: 1.5em;
+color: #DCB991;
+}
+
+.checkbox_input {height: 1em;
+width: 1em;
+margin-right: 1em;}
+
+.checkbox {padding: 0.5em;
+}
+
+
+  .search_searchForm
+{background-size: 30%;
+
+background-image: url(https://camillesourget.com/upload/images/boeckler-rel3-UxA0U.jpg);
+  background-repeat: no-repeat;
+  background-position: center; 
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 13em;
+  padding-bottom: 12em;
+}
+
+  .searchForm_search {
+    height: 1.5em;
+    max-width: 14em;
+    border-style: none;
+    text-align: center;
+    font-weight: bold;
+    color: #DCB991;
+    font-style: italic;
+    font-size: 2em;
+  margin: 0.2em;
+  margin-left: 3em;
+background-color: transparent;
+}
+
+#searchForm_search::placeholder {color: #DCB991;}
+
+.filtreSearch { 
+  max-width: 20em;
+  text-align: justify;
+  font-style: italic;
+  color: #DCB991;
+  font-style: italic;
+  font-size: 1.5em;
+margin: 0.2em;
+overflow-y: auto;
+background-color: transparent;
+height: 10em;
+margin-left: 5em;
+
+}
+#visible{
+  visibility: hidden;
+}
+a{color: #693813; font-weight: bold; }
+
+a:hover{  color: #DCB991;
+}
+
+.link{color:beige}
+.searchForm_validButton {background-color: transparent;
+  box-shadow: black;
+border-style: none;
+height: 1.5em;
+width: 13em;
+border-style: none;
+padding: 1.7em;
+box-shadow: 2px 2px 15px 5px #140903;
+border-radius: 5px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+margin:auto;
+margin-top: 2em;
+}
+    
+.validButton_validSearch {text-align:center;
+  display: flex;
+justify-content: center;
+font-weight: bold;
+color: #DCB991;
+font-style: italic;
+font-size: 1.4em;
+
+
+}
+
+
+  @media only screen and (max-width: 425px) {
+    .search_searchForm{background-size: 100%;
+    padding: 2em; 
+    }
+
+    .searchForm_search{margin-left: 2em; height: 1em;}
+
+    .search{
+      background: none;
+    }
+
+    .searchForm_container{
+      background: radial-gradient(circle, rgba(245,243,241,1) 39%, rgba(220,185,145,1) 76%, rgba(92,47,16,1) 97%);
+    }
+  }
+  
+  /* Medium devices (landscape tablets, 768px and up) */
+  @media only screen and (max-width: 1024px) {
+    .search_searchForm{background-size: 100%;
+      padding: 5em;
+    }
+  }

@@ -1,0 +1,15 @@
+{
+    "swaggerDefinition": {
+        "info": {
+            "description": "site colaboratif de recettes de cuisine",
+            "title": "O'petits oignons",
+            "version": "1.0.0"
+        },
+        "basePath": "/api",
+        "produces": [
+            "application/json"
+        ],
+        "schemes": ["http", "https"]
+    },
+    "files": ["./app/router.js", "./app/models/*.js", "./app/controllers/*.js"]
+}
