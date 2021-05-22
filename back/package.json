@@ -18,10 +18,6 @@
   },
   "author": "",
   "license": "ISC",
-  /* "bugs": {
-    "url": "https://github.com/O-clock-Nemo/projet-cuisine-facile/issues"
-  },
-  "homepage": "https://github.com/O-clock-Nemo/projet-cuisine-facile#readme", */
   "dependencies": {
     "bcrypt": "^5.0.1",
     "chai": "^4.3.4",
