@@ -156,8 +156,8 @@ class CreateRecipe extends Component {
       label: [this.state.label1, this.state.label2],
       mesure_unit: [this.state.mesure_unit1, this.state.mesure_unit2],
       quantity: [this.state.quantity1, this.state.quantity2]
-    }; // when we click on valid button , the initial state change
-
+    }; // when we click on valid button , the initial state change!
+           
     console.log('data', data);
     try {
       const response = await newRecipe({ description: data.description, prepare_time: data.prepare_time, cooking_time: data.cooking_time, name: data.name, part_number: data.part_number, part_type: data.part_type, category_id: data.category_id, allergy_id: data.allergy_id, share: data.share, difficulty_id: data.difficulty_id, quantity: data.quantity, label: data.label, mesure_unit: data.mesure_unit  });
