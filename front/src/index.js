@@ -7,7 +7,6 @@ import { CookiesProvider } from 'react-cookie';
 import App from 'src/components/App';
 
 
-
 const rootReactElement = (
 
   <CookiesProvider>

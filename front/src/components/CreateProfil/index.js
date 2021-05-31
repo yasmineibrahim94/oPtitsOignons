@@ -4,7 +4,6 @@ import axios from 'axios';
 import Header from '../Header';
 import Footer from '../Footer';
 import ValidButton from '../ValidButton';
-import UploadPic from '../UploadPic';
 
 // style import
 import './style.scss';
@@ -125,7 +124,6 @@ class CreateProfil extends Component {
             </div>
 
             <div className="page2">
-              <UploadPic />
               <ValidButton type="submit" />
             </div>
           </div>

@@ -57,6 +57,8 @@
     "react-cookie": "^4.0.3",
     "react-counter-input": "^0.2.1",
     "react-dom": "^17.0.1",
+    "react-images-upload": "^1.2.8",
+    "react-images-uploader": "^1.2.0-rc1",
     "react-pageflip": "^1.0.0",
     "react-router-dom": "^5.2.0",
     "redux": "^4.0.5",

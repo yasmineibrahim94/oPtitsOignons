@@ -1,0 +1,132 @@
+.body{  
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;}
+
+.recipe_container{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.recipe_form
+{
+  display: flex;
+  flex-direction: column;
+  padding: 2%;
+  background: radial-gradient(circle, rgba(245,243,241,1) 39%, rgba(220,185,145,1) 76%, rgba(92,47,16,1) 97%);
+}
+
+.recipe_name {
+border: 1px solid grey;
+text-align: center;
+width: 40%;
+font-size: 200%;
+padding: 1%;
+font-style: italic;
+font-weight: bold;
+margin-left: 30%;
+margin-right: 30%;
+margin-bottom: 3%;
+border-radius: 20px;
+}
+
+.recipe_all_info{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 20%;
+}
+
+.recipe_info1{
+  display: inline-block;
+  justify-content: flex-start;
+width: 35%;
+}
+
+.recipe_info2{ 
+  display: inline-block;
+  justify-content: center;
+  width: 35%;
+}
+
+.recipe_info3 {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: right;
+  width: 30%;
+}
+
+.recipe_time{
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+
+}
+.recipe_p {width: 5%;
+  font-size: 1.5em;
+  padding-left: 5%;
+  padding-right: 1%;
+}
+
+.recipe_select{
+  width: 15%;
+  font-size: 1.2em;
+}
+.recipe_part{
+  width: 8%;
+  font-size: 1.2em;
+  margin-right: 1%;
+}
+.recipe_type{width: 40%;
+  border: 1px solid grey;
+  font-size: 1.2em;
+}
+
+.recipe_label {
+font-size: 1.5em;
+padding-top: 0.5em;}
+
+.recipe_cooking_time, .recipe_prepare_time {
+  width: 30%;
+font-size: 1.2em;
+margin-left: 2%;}
+
+.recipe_h1{
+  padding-top: 10%;}
+
+.recipe_details
+{display: flex;
+justify-content: center;}
+
+.recipe_ingredient1, .recipe_ingredient2 {
+  display: flex;
+  flex-direction: row;
+  font-size: 1.2em;
+  padding: 5%;
+}
+
+.label_quantity {
+  width: 11%;
+  font-size: 1.2em;
+}
+.label_name {
+  width: 50%;
+  border: 1px solid grey;
+  font-size: 1.2em;
+}
+.label_mesure{
+  width: 17%;
+margin-left: 1%;
+margin-right: 2%;}
+
+.recipe_textarea{
+  font-size: 1.5em;
+  margin-top: 3%;
+}
+
+.recipe_button {
+width: 80%;
+font-weight: bold;
+padding: 2%;
+margin-top: 30%;
+font-size: 1.5em;}
