@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+
 // composants import
 import Header from '../Header';
 import Footer from '../Footer';
-
-// style import
-//import './style.scss';
 
 axios.defaults.withCredentials = true;
 
@@ -42,7 +40,7 @@ class CreateProfil extends Component {
     this.setState({
       confirmPassword: e.target.value,
     });
-  }; // focus on comfrim password
+  }; // focus on confirm password
 
   handleSubmit = (e) => {
     e.preventDefault();
@@ -55,7 +53,7 @@ class CreateProfil extends Component {
 
     const thePassword = data.password;
     const regex = new RegExp('^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?!.*?[#?!$ %^&@*-]).{8,}$');
-    const message = 'mot de passe incorrect : 1 majuscule, 1 minuscule, 1 chiffre, 8 caractères'; // regex verification for valid password
+    const message = 'mot de passe incorrect : 1 majuscule, 1 minuscule, 1 chiffre, 8 caractères'; // regex verification for valid password with security
     if (!regex.test(thePassword)) {
       return alert(message);
     }

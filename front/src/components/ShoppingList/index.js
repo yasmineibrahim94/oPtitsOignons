@@ -66,11 +66,9 @@ async function getList () {
 
     myList = response.data[0]; // Set the list
   
-    //! New user not have an empty list (response.data[0].items) is an Array
-    //! User who have an existant list  (response.data[0].items) is an simple object
-
+  
     // Array -> Empty data, skip for loop & set attribute
-    // Object -> Get list of items
+    // Object -> Get list of item
     if (Array.isArray(response.data[0].items)) {
       
       console.log("response.data[0].items est un Array", );

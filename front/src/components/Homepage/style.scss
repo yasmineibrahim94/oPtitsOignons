@@ -1,3 +1,101 @@
+// SHELF LOGIN
+.ShelfSignIn {
+  background-image: url(https://images-ext-1.discordapp.net/external/fSVKzlA1sT3RkOwEscj7UE9pPPt5O10bo35WkiOma4o/http/www.wallfizz.com/art-design/inclassable/3097-mur-en-bois-WallFizz.jpg?width=400&height=300);
+  display: flex;
+  padding-top: 1.5rem;
+  align-items: flex-end;
+  justify-content: space-evenly;
+  background-size: contain;
+  height: 40%;
+}
+
+.createProfilBook{
+  width: 200%;
+  background-image: url(https://storage.googleapis.com/webdesignledger.pub.network/LaT/edd/2016/02/black-bumpy-old-book-cover-texture-15-780x1078.jpg);
+}
+
+.myAccountBook{
+  width: 270%;
+  background-image: url(https://t4.ftcdn.net/jpg/00/22/19/83/360_F_22198364_OuIZMz9ebnqb3SLtWcLX6lORtwUfdEQr.jpg);
+}
+
+// SHELF CATEGORY
+.ShelfCategory {background-image: url(https://images-ext-1.discordapp.net/external/fSVKzlA1sT3RkOwEscj7UE9pPPt5O10bo35WkiOma4o/http/www.wallfizz.com/art-design/inclassable/3097-mur-en-bois-WallFizz.jpg?width=400&height=300);
+  border-top: solid 30px #3A2C2B;
+  display: flex;
+  padding-top: 1.5rem;
+  align-items: flex-end;
+  justify-content: space-evenly;
+  background-size: contain;
+  height: 40%;
+  }
+
 .librairy{
   height: 100vh;
 }
+
+.dessertBook {
+  width: 200%;
+  background-image: url(https://t4.ftcdn.net/jpg/00/22/19/83/360_F_22198364_OuIZMz9ebnqb3SLtWcLX6lORtwUfdEQr.jpg);
+}
+
+.dishBook{
+  width: 170%;
+  background-image: url(https://jooinn.com/images/old-book-texture-15.jpg);
+}
+
+.starterBook{
+  width: 160%;
+  background-image: url(https://jooinn.com/images/old-book-texture-15.jpg);
+}
+
+.librairy{
+  height: 100vh;
+}
+
+// SHELF MY ACCOUNT
+.ShelfMyAccount {background-image: url(https://images-ext-1.discordapp.net/external/fSVKzlA1sT3RkOwEscj7UE9pPPt5O10bo35WkiOma4o/http/www.wallfizz.com/art-design/inclassable/3097-mur-en-bois-WallFizz.jpg?width=400&height=300);
+  border-top: solid 30px #3A2C2B;
+  display: flex;
+  padding-top: 1.5rem;
+  align-items: flex-end;
+  justify-items: baseline;
+  justify-content: space-around;
+  background-size: contain;
+  height: 40%;
+  }
+
+.logoutBook{
+  width: 100%;
+  background-image: url(https://t4.ftcdn.net/jpg/00/22/19/83/360_F_22198364_OuIZMz9ebnqb3SLtWcLX6lORtwUfdEQr.jpg);
+}
+
+.myRecipesBook{
+  width: 80%;
+  background-image: url(https://previews.123rf.com/images/thomaslenne/thomaslenne1303/thomaslenne130300007/18712000-old-book-cover-texture.jpg);
+}
+
+.shoppingListBook {
+  width: 110%;
+  background-image: url(https://storage.googleapis.com/webdesignledger.pub.network/LaT/edd/2016/02/black-bumpy-old-book-cover-texture-15-780x1078.jpg);
+}
+
+
+// ALL BOOKS
+.dessertBook, .dishBook, .starterBook, .createProfilBook, .myAccountBook, .logoutBook, .shoppingListBook, .myRecipesBook {
+  height: 19rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  color: white;
+  font-size: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  writing-mode: horizontal-tb;
+  padding: 1rem;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+

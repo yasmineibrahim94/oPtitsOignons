@@ -1,6 +1,7 @@
+// import
 import React from 'react';
 import { Button, Icon } from 'semantic-ui-react';
-import './style.scss';
+import './style.css';
 import 'semantic-ui-css/semantic.min.css';
 
 const Footer = () => (

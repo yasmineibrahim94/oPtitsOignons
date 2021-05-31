@@ -2,7 +2,6 @@ import React from 'react';
 import BookLogout from './BookLogout';
 import BookMyRecipes from './BookMyRecipes';
 import BookShoppingList from './BookShoppingList';
-import './style.css';
 
 const ShelfMyAccount = () => (
   <div className="ShelfMyAccount">

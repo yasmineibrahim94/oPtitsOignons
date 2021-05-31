@@ -2,16 +2,16 @@ import React, { Component, useEffect, useContext } from 'react';
 import axios from 'axios';
 axios.defaults.withCredentials = true;
 
-import { Redirect } from 'react-router-dom';
 // composants import
 import Header from '../Header';
 import Footer from '../Footer';
-import Auth from '../../contexts/index';
-import history from '../History/history';
+
 // style import
 import './style.scss';
-import { Placeholder } from 'semantic-ui-react';
+
+//auth import
 import { login } from '../../services';
+
 
 class LoginForm extends Component {
   /* initial state of form */
@@ -53,47 +53,6 @@ class LoginForm extends Component {
     catch ({ response }) {
       console.log(response);
     }
-
-    /*
-    (async () => {
-      const rawResponse = await fetch('https://api-cuisine.herokuapp.com/api/login', {
-        method: 'POST',
-        headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json',
-        },
-        credentials: 'include',
-        body: JSON.stringify({ email: data.email, password: data.password }),
-      });
-      const content = await rawResponse.json();
-      if (rawResponse.status == 200) {
-        console.log(content);
-        return this.props.history.push('/');
-      }
-      return alert(message);
-    })();*/
-
-    /*   axios.post('http://localhost:3000/api/login', data, axiosConfig)
-        .then((res) => {
-          if (res.status == 200) {
-            this.props.history.push('/');
-          }
-          else {
-            return alert(message);
-          }
-        })
-        .catch((err) => console.log(err)); */
-    /* axios
-      .post('https://api-cuisine.herokuapp.com/api/login', data)
-      .then((res) => {
-        if (res.status == 200) {
-          this.props.history.push('/');
-        }
-        else {
-          return alert(message);
-        }
-      })
-      .catch((err) => console.log(err)); */
     // we verify that there is a user with this email and password or we send an error
   };
 
@@ -102,14 +61,6 @@ class LoginForm extends Component {
       this.state.password = this.props.history.location.state[0];
       this.state.email = this.props.history.location.state[1];
     }
-
-   // const { isAuthenticated, setIsAuthenticated} = useContext(Auth);
-    /*
-    useEffect(() => {
-      if (isAuthenticated) {
-        history.replace('/');
-      }
-    }, [history, isAuthenticated]);*/
 
     return (
       <div className="loginForm_container">
@@ -122,7 +73,7 @@ class LoginForm extends Component {
               id="email"
               name="email"
               placeholder="email"
-              value={this.state.email}// {this.state.email}
+              value={this.state.email}
               onChange={this.onEmailChange}
               required
             />
@@ -132,7 +83,7 @@ class LoginForm extends Component {
               id="password"
               name="password"
               placeholder="password"
-              value={this.state.password}// {this.state.password}
+              value={this.state.password}
               onChange={this.onPasswordChange}
               required
             />

@@ -8,15 +8,15 @@ import {
 
 import Homepage from '../Homepage';
 import ShoppingList from '../ShoppingList';
-import StarterList from '../StarterList';
-import DishList from '../DishList';
-import DessertList from '../DessertsList';
-import MyRecipes from '../MyRecipes';
+import StarterList from '../BooksOfRecipes/StarterList';
+import DishList from '../BooksOfRecipes/DishList';
+import DessertList from '../BooksOfRecipes/DessertsList';
+import MyRecipes from '../BooksOfRecipes/MyRecipes';
 import CreateProfil from '../CreateProfil';
-import CreateRecipe from '../MyRecipes/CreateRecipe';
+import CreateRecipe from '../CreateRecipe';
 import LoginForm from '../LoginForm';
 import Recipe from '../Recipe';
-import Search from '../Search';
+import Search from '../Header/Search';
 import { hasAthenticated } from '../../services/index';
 
 function App() {

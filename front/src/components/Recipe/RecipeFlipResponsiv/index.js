@@ -1,13 +1,14 @@
 import React from 'react';
 import axios from 'axios';
 import { withRouter } from "react-router";
+
 // book import
 import HTMLFlipBook from 'react-pageflip';
 
 // composants import
 import Header from 'src/components/Header';
 import Footer from 'src/components/Footer';
-import RecipeButtonAdd from '../RecipeButtonAdd';
+
 // style import
 import 'src/components/Recipe/index.scss';
 
@@ -52,36 +53,13 @@ class RecipeFlipResponsiv extends React.Component {
       const response = await axios.get(`https://apicuisine.herokuapp.com/api/recipe/${this.props.match.params.id}`);
       this.setState({ recipe : response.data });
     
-      //? Prevoir la recupération du pseudo du proprietaire de la recette avec link vers ces recettes
-      //! BDD -> voir quelle route et si fonctionelle
-
     }catch (error) {
       console.log(error);
     }
   }
- 
-  /**
-     * ! ne pas toucher source du souci des ombres
-     */
-  /* onPage = (e) => {
-        this.setState({
-            page: e.data,
-        });
-
-    };
-    componentDidMount() {
-        this.setState({<div className="MyRecipe"><Link to="/recipe/{id}" type="button" className="linkMyRecipe">nom de la recette recette</Link></div>
-            totalPage: this.flipBook.getPageFlip().getPageCount()
-        });
-    } */
 
   render() {const {recipe} = this.state;
   console.log(recipe);
-
-    //! Voir pour améliorer le return et conditions si la recette n'existe pas...
-
-    //TODO  Prévoir l'affichage des alergènes
-    //TODO  Prévoir l'affichage des reviews
 
     return (
       <div className="Recette_container">

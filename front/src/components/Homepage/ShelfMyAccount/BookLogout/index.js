@@ -4,10 +4,6 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 axios.defaults.withCredentials = true;
 
-import './style.css';
-
-
-
 const handleLogout = () => {
   axios.get('https://apicuisine.herokuapp.com/api/logout')
   .then((response) => {console.log(response)})
@@ -18,7 +14,7 @@ function BookLogout() {
   return (
       <div className="createProfilBookContainer">
          
-         <Link to="/logout" className="editProfilBook" onClick={handleLogout}>Se deconnecter</Link>
+         <Link to="/logout" className="logoutBook" onClick={handleLogout}>Se deconnecter</Link>
               
       </div>
   );
