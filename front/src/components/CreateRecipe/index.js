@@ -303,7 +303,7 @@ onAddImage = (e) => {
                     onChange={this.onLabel2}
                   /></div>
                    <div className="Create_recipe_validButton">
-                    <button type="submit" className="recipe_button">Valider</button> 
+                    <button type="submit" className="recipe_button">Poster ma recette</button> 
                   </div>
                   </div>
             

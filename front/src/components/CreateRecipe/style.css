@@ -73,7 +73,7 @@ width: 35%;
   font-size: 1.2em;
 }
 .recipe_part{
-  width: 8%;
+  width: 11%;
   font-size: 1.2em;
   margin-right: 1%;
 }
@@ -87,7 +87,7 @@ font-size: 1.5em;
 padding-top: 0.5em;}
 
 .recipe_cooking_time, .recipe_prepare_time {
-  width: 30%;
+  width: 40%;
 font-size: 1.2em;
 margin-left: 2%;}
 
@@ -122,20 +122,23 @@ margin-right: 2%;}
 .recipe_textarea{
   font-size: 1.5em;
   margin-top: 3%;
+  height: 40%;
 }
 
 .recipe_button {
 width: 80%;
 font-weight: bold;
 padding: 2%;
-margin-top: 30%;
+margin-top: 15%;
 font-size: 1.5em;}
 
 @media only screen and (max-width: 481px) {
 .recipe_info2, .recipe_details, .recipe_name {display: flex;
 flex-direction: column;
 align-items: left;
-width: 100%;}
+width: 100%;
+font-size: 0.7em;
+}
 
 .recipe_name {
   margin-top: 20%; 
@@ -149,9 +152,11 @@ padding: 5%;
   display: flex;
   flex-direction: row;
   padding: 5%;
+  font-size: 0.7em;
+
 }
 .recipe_part {
-  width: 15%;
+  width: 20%;
   margin-right: 2%;
 }
 
@@ -174,8 +179,7 @@ margin-top: 5%;}
   }
 
   .recipe_prepare_time, .recipe_cooking_time {
-    width: 90%;
-    margin-right: 5%;
+    width: 100%;
   }
 
   .recipe_time{
@@ -185,16 +189,21 @@ margin-top: 5%;}
   .recipe_info3 {display: flex;
     flex-direction: column;
     width: 100%;
+    font-size: 0.6em;
+
 }
 
 .label_quantity {
-  width: 17%;
+  width: 20%;
 }
 
 .label_mesure {
   width: 50%;
 }
 
+.recipe_h1{
+  font-size: 2em;
+}
 .recipe_textarea {
   width: 90%;
 }
