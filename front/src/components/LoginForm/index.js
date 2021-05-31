@@ -136,7 +136,7 @@ class LoginForm extends Component {
               onChange={this.onPasswordChange}
               required
             />
-            <button type="submit" /* onClick={Cookies.set("user", "loginTrue")} */ className="loginForm_validButton"><div className="validButton_validLogin">Me connecter</div></button>
+            <button type="submit" className="loginForm_validButton"><div className="validButton_validLogin">Me connecter</div></button>
           </div>
         </form>
         <Footer />

@@ -3,10 +3,9 @@ import axios from 'axios';
 // composants import
 import Header from '../Header';
 import Footer from '../Footer';
-import ValidButton from '../ValidButton';
 
 // style import
-import './style.scss';
+//import './style.scss';
 
 axios.defaults.withCredentials = true;
 
@@ -73,30 +72,25 @@ class CreateProfil extends Component {
         }
       });
 
-    // this.props.history.push('/login');
   }; // we create a new user with this email, pseudo and password or we send an error
 
   render() { // = the visuel
 
     return (
-      <div className="myRecipe_container">
-      <div className="CreateProfil_container">
+      <div className="loginForm_container">
         <Header />
-        <form className="formMy" onSubmit={this.handleSubmit}>
-          <div className="pageContainer">
-            <div className="page1">
-              <h1 className="form_Title">Mes informations</h1>
-
+        <form className="login" onSubmit={this.handleSubmit}>
+          <div className="login_loginForm">
               <input
                 placeholder="Pseudo"
-                className="inputForm"
+                className="loginForm_pseudo"
                 value={this.state.pseudo}
                 onChange={this.onPseudoChange}
                 required
               />
               <input
                 type="password"
-                className="inputForm"
+                className="loginForm_password"
                 id="1stPassword"
                 placeholder="Mot de passe"
                 value={this.state.password}
@@ -105,9 +99,9 @@ class CreateProfil extends Component {
               />
               <input
                 type="password"
-                className="inputForm"
+                className="loginForm_password"
                 id="ConfirmPassword"
-                placeholder="comfirme"
+                placeholder="Retaper le mot de passe"
                 value={this.state.confirmPassword}
                 onChange={this.onConfirmPassword}
                 required
@@ -115,21 +109,18 @@ class CreateProfil extends Component {
 
               <input
                 type="email"
-                className="inputForm"
+                className="loginForm_pseudo"
                 placeholder="email"
                 value={this.state.email}
                 onChange={this.onEmailChange}
                 required
               />
-            </div>
 
-            <div className="page2">
-              <ValidButton type="submit" />
+            <button type="submit" className="loginForm_validButton"><div className="validButton_validLogin">M'inscrire</div></button>
             </div>
-          </div>
         </form>
         <Footer />
-      </div></div>
+      </div>
     );
   }
 }

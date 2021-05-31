@@ -3,16 +3,16 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  
+  background: radial-gradient(circle, rgba(245,243,241,1) 39%, rgba(220,185,145,1) 76%, rgba(92,47,16,1) 97%);
 }
 
-.login  {background: radial-gradient(circle, rgba(245,243,241,1) 39%, rgba(220,185,145,1) 76%, rgba(92,47,16,1) 97%);
+.login  {
   padding: 1.5em;
   }
 
   
   .login_loginForm
-{background-size: 30%;
+{background-size: contain;
 
 background-image: url(https://camillesourget.com/upload/images/boeckler-rel3-UxA0U.jpg);
   background-repeat: no-repeat;
@@ -32,17 +32,11 @@ background-image: url(https://camillesourget.com/upload/images/boeckler-rel3-UxA
     text-align: center;
     padding: 1em;
     font-weight: bold;
-    color: #DCB991;
+    color: black;
     font-style: italic;
     font-size: 1.5em;
   margin: 0.2em;
-
-background-color: transparent;
 }
-
-#pseudo::placeholder, #password::placeholder {color: #DCB991;}
-
-.loginForm_password{margin-bottom: 1.7em;}
 
 .loginForm_validButton {background-color: transparent;
   box-shadow: black;
@@ -57,6 +51,7 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 margin:auto;
+margin-top: 5%;
 }
     
 .validButton_validLogin {text-align:center;
