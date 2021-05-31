@@ -1,4 +1,4 @@
-import React, { Component, useEffect, useContext } from 'react';
+import React, { Component } from 'react';
 import axios from 'axios';
 axios.defaults.withCredentials = true;
 
@@ -20,8 +20,6 @@ class LoginForm extends Component {
     email: '',
     password: '',
   };
-
-  
 
   onEmailChange = (e) => {
     this.setState({

@@ -6,14 +6,14 @@ import 'semantic-ui-css/semantic.min.css';
 
 const Footer = () => (
   <div className="footer">
-    <Button color='facebook'>
-      <Icon name='facebook' /> Facebook
+    <Button color='facebook' size="huge">
+      <Icon name='facebook' size="medium" /> Facebook
     </Button>
-    <Button color='instagram'>
-      <Icon name='instagram' /> Instagram
+    <Button color='instagram' size="huge">
+      <Icon name='instagram' size="medium"/> Instagram
     </Button>
-    <Button color='twitter'>
-      <Icon name='twitter' /> Twitter
+    <Button color='twitter' size="huge">
+      <Icon name='twitter' size="medium"/> Twitter
     </Button>
   </div>
 );

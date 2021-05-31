@@ -74,26 +74,26 @@ recipe: []
           onFlip={this.onPage}
           onChangeOrientation={this.onChangeOrientation}
           onChangeState={this.onChangeState}
-          className="flip-book"
+          className="flip-book_my_recipe"
           ref={(el) => (this.flipBook = el)}
         >
 
-          <PageCover>Les recettes de user.name</PageCover>
+          <PageCover>Mes recettes</PageCover>
 
           <Page number={1}>
           <div>
       
       <h4 className="page-header">Mes recettes</h4>
       <div className="page" ref={this.ref}>
-      {data.recipe.slice(0,2).map((data) => (
+      {data.recipe.slice(0,1).map((data) => (
 
           <Link to={`/recipe/${data.id}`}>
 
           <div className="recipe-content">
             <div className="info-recipe">
               <h5 className="page-title">{data.name}</h5>
-              <div className="page-infos"> <p>Temps de préparation : {data.prepare_time} </p>
-              <p>Temps de cuisson : {data.cooking_time} </p>
+              <div className="page-infos"> <p>Préparation : {data.prepare_time} </p>
+              <p>Cuisson : {data.cooking_time} </p>
               <p>Pour {data.part_number} {data.part_type}</p>  
               </div>                         
               <div className="image-recipe"><img src={data.image} className="imgRecipe"/></div>
@@ -112,15 +112,15 @@ recipe: []
       
       <h4 className="page-header">Mes recettes</h4>
       <div className="page" ref={this.ref}>
-      {data.recipe.slice(2,4).map((data) => (
+      {data.recipe.slice(1,2).map((data) => (
 
           <Link to={`/recipe/${data.id}`}>
 
           <div className="recipe-content">
             <div className="info-recipe">
               <h5 className="page-title">{data.name}</h5>
-              <div className="page-infos"> <p>Temps de préparation : {data.prepare_time} </p>
-              <p>Temps de cuisson : {data.cooking_time} </p>
+              <div className="page-infos"> <p>Préparation : {data.prepare_time} </p>
+              <p>Cuisson : {data.cooking_time} </p>
               <p>Pour {data.part_number} {data.part_type}</p>  
               </div>                         
               <div className="image-recipe"><img src={data.image} className="imgRecipe"/></div>
@@ -139,15 +139,15 @@ recipe: []
       
       <h4 className="page-header">Mes recettes</h4>
       <div className="page" ref={this.ref}>
-      {data.recipe.slice(4,6).map((data) => (
+      {data.recipe.slice(2,3).map((data) => (
 
           <Link to={`/recipe/${data.id}`}>
 
           <div className="recipe-content">
             <div className="info-recipe">
               <h5 className="page-title">{data.name}</h5>
-              <div className="page-infos"> <p>Temps de préparation : {data.prepare_time} </p>
-              <p>Temps de cuisson : {data.cooking_time} </p>
+              <div className="page-infos"> <p>Préparation : {data.prepare_time} </p>
+              <p>Cuisson : {data.cooking_time} </p>
               <p>Pour {data.part_number} {data.part_type}</p>  
               </div>                         
               <div className="image-recipe"><img src={data.image} className="imgRecipe"/></div>
@@ -166,15 +166,15 @@ recipe: []
       
       <h4 className="page-header">Mes recettes</h4>
       <div className="page" ref={this.ref}>
-      {data.recipe.slice(6,8).map((data) => (
+      {data.recipe.slice(3,4).map((data) => (
 
           <Link to={`/recipe/${data.id}`}>
 
           <div className="recipe-content">
             <div className="info-recipe">
               <h5 className="page-title">{data.name}</h5>
-              <div className="page-infos"> <p>Temps de préparation : {data.prepare_time} </p>
-              <p>Temps de cuisson : {data.cooking_time} </p>
+              <div className="page-infos"> <p>Préparation : {data.prepare_time} </p>
+              <p>Cuisson : {data.cooking_time} </p>
               <p>Pour {data.part_number} {data.part_type}</p>  
               </div>                         
               <div className="image-recipe"><img src={data.image} className="imgRecipe"/></div>
@@ -193,15 +193,15 @@ recipe: []
       
       <h4 className="page-header">Mes recettes</h4>
       <div className="page" ref={this.ref}>
-      {data.recipe.slice(8,10).map((data) => (
+      {data.recipe.slice(4,5).map((data) => (
 
           <Link to={`/recipe/${data.id}`}>
 
           <div className="recipe-content">
             <div className="info-recipe">
               <h5 className="page-title">{data.name}</h5>
-              <div className="page-infos"> <p>Temps de préparation : {data.prepare_time} </p>
-              <p>Temps de cuisson : {data.cooking_time} </p>
+              <div className="page-infos"> <p>Préparation : {data.prepare_time} </p>
+              <p>Cuisson : {data.cooking_time} </p>
               <p>Pour {data.part_number} {data.part_type}</p>  
               </div>                         
               <div className="image-recipe"><img src={data.image} className="imgRecipe"/></div>
@@ -220,15 +220,15 @@ recipe: []
       
       <h4 className="page-header">Mes recettes</h4>
       <div className="page" ref={this.ref}>
-      {data.recipe.slice(10,12).map((data) => (
+      {data.recipe.slice(5,6).map((data) => (
 
           <Link to={`/recipe/${data.id}`}>
 
           <div className="recipe-content">
             <div className="info-recipe">
               <h5 className="page-title">{data.name}</h5>
-              <div className="page-infos"> <p>Temps de préparation : {data.prepare_time} </p>
-              <p>Temps de cuisson : {data.cooking_time} </p>
+              <div className="page-infos"> <p>Préparation : {data.prepare_time} </p>
+              <p>Cuisson : {data.cooking_time} </p>
               <p>Pour {data.part_number} {data.part_type}</p>  
               </div>                         
               <div className="image-recipe"><img src={data.image} className="imgRecipe"/></div>
@@ -246,15 +246,419 @@ recipe: []
       
       <h4 className="page-header">Mes recettes</h4>
       <div className="page" ref={this.ref}>
-      {data.recipe.slice(12,14).map((data) => (
+      {data.recipe.slice(6,7).map((data) => (
 
           <Link to={`/recipe/${data.id}`}>
 
           <div className="recipe-content">
             <div className="info-recipe">
               <h5 className="page-title">{data.name}</h5>
-              <div className="page-infos"> <p>Temps de préparation : {data.prepare_time} </p>
-              <p>Temps de cuisson : {data.cooking_time} </p>
+              <div className="page-infos"> <p>Préparation : {data.prepare_time} </p>
+              <p>Cuisson : {data.cooking_time} </p>
+              <p>Pour {data.part_number} {data.part_type}</p>  
+              </div>                         
+              <div className="image-recipe"><img src={data.image} className="imgRecipe"/></div>
+            </div>
+
+</div>
+          </Link>))}
+
+      </div>
+    </div>
+          </Page>
+
+
+          <Page number={11}>
+          <div>
+      
+      <h4 className="page-header">Mes recettes</h4>
+      <div className="page" ref={this.ref}>
+      {data.recipe.slice(7,8).map((data) => (
+
+          <Link to={`/recipe/${data.id}`}>
+
+          <div className="recipe-content">
+            <div className="info-recipe">
+              <h5 className="page-title">{data.name}</h5>
+              <div className="page-infos"> <p>Préparation : {data.prepare_time} </p>
+              <p>Cuisson : {data.cooking_time} </p>
+              <p>Pour {data.part_number} {data.part_type}</p>  
+              </div>                         
+              <div className="image-recipe"><img src={data.image} className="imgRecipe"/></div>
+            </div>
+
+</div>
+          </Link>))}
+
+      </div>
+    </div>
+          </Page>
+
+
+          <Page number={12}>
+          <div>
+      
+      <h4 className="page-header">Mes recettes</h4>
+      <div className="page" ref={this.ref}>
+      {data.recipe.slice(8,9).map((data) => (
+
+          <Link to={`/recipe/${data.id}`}>
+
+          <div className="recipe-content">
+            <div className="info-recipe">
+              <h5 className="page-title">{data.name}</h5>
+              <div className="page-infos"> <p>Préparation : {data.prepare_time} </p>
+              <p>Cuisson : {data.cooking_time} </p>
+              <p>Pour {data.part_number} {data.part_type}</p>  
+              </div>                         
+              <div className="image-recipe"><img src={data.image} className="imgRecipe"/></div>
+            </div>
+
+</div>
+          </Link>))}
+
+      </div>
+    </div>
+          </Page>
+
+
+          <Page number={13}>
+          <div>
+      
+      <h4 className="page-header">Mes recettes</h4>
+      <div className="page" ref={this.ref}>
+      {data.recipe.slice(9,10).map((data) => (
+
+          <Link to={`/recipe/${data.id}`}>
+
+          <div className="recipe-content">
+            <div className="info-recipe">
+              <h5 className="page-title">{data.name}</h5>
+              <div className="page-infos"> <p>Préparation : {data.prepare_time} </p>
+              <p>Cuisson : {data.cooking_time} </p>
+              <p>Pour {data.part_number} {data.part_type}</p>  
+              </div>                         
+              <div className="image-recipe"><img src={data.image} className="imgRecipe"/></div>
+            </div>
+
+</div>
+          </Link>))}
+
+      </div>
+    </div>
+          </Page>
+
+
+          <Page number={14}>
+          <div>
+      
+      <h4 className="page-header">Mes recettes</h4>
+      <div className="page" ref={this.ref}>
+      {data.recipe.slice(10,11).map((data) => (
+
+          <Link to={`/recipe/${data.id}`}>
+
+          <div className="recipe-content">
+            <div className="info-recipe">
+              <h5 className="page-title">{data.name}</h5>
+              <div className="page-infos"> <p>Préparation : {data.prepare_time} </p>
+              <p>Cuisson : {data.cooking_time} </p>
+              <p>Pour {data.part_number} {data.part_type}</p>  
+              </div>                         
+              <div className="image-recipe"><img src={data.image} className="imgRecipe"/></div>
+            </div>
+
+</div>
+          </Link>))}
+
+      </div>
+    </div>
+          </Page>
+
+
+          <Page number={15}>
+          <div>
+      
+      <h4 className="page-header">Mes recettes</h4>
+      <div className="page" ref={this.ref}>
+      {data.recipe.slice(11,12).map((data) => (
+
+          <Link to={`/recipe/${data.id}`}>
+
+          <div className="recipe-content">
+            <div className="info-recipe">
+              <h5 className="page-title">{data.name}</h5>
+              <div className="page-infos"> <p>Préparation : {data.prepare_time} </p>
+              <p>Cuisson : {data.cooking_time} </p>
+              <p>Pour {data.part_number} {data.part_type}</p>  
+              </div>                         
+              <div className="image-recipe"><img src={data.image} className="imgRecipe"/></div>
+            </div>
+
+</div>
+          </Link>))}
+
+      </div>
+    </div>
+          </Page>
+
+
+          <Page number={16}>
+          <div>
+      
+      <h4 className="page-header">Mes recettes</h4>
+      <div className="page" ref={this.ref}>
+      {data.recipe.slice(12,13).map((data) => (
+
+          <Link to={`/recipe/${data.id}`}>
+
+          <div className="recipe-content">
+            <div className="info-recipe">
+              <h5 className="page-title">{data.name}</h5>
+              <div className="page-infos"> <p>Préparation : {data.prepare_time} </p>
+              <p>Cuisson : {data.cooking_time} </p>
+              <p>Pour {data.part_number} {data.part_type}</p>  
+              </div>                         
+              <div className="image-recipe"><img src={data.image} className="imgRecipe"/></div>
+            </div>
+
+</div>
+          </Link>))}
+
+      </div>
+    </div>
+          </Page>
+
+
+          <Page number={17}>
+          <div>
+      
+      <h4 className="page-header">Mes recettes</h4>
+      <div className="page" ref={this.ref}>
+      {data.recipe.slice(13,14).map((data) => (
+
+          <Link to={`/recipe/${data.id}`}>
+
+          <div className="recipe-content">
+            <div className="info-recipe">
+              <h5 className="page-title">{data.name}</h5>
+              <div className="page-infos"> <p>Préparation : {data.prepare_time} </p>
+              <p>Cuisson : {data.cooking_time} </p>
+              <p>Pour {data.part_number} {data.part_type}</p>  
+              </div>                         
+              <div className="image-recipe"><img src={data.image} className="imgRecipe"/></div>
+            </div>
+
+</div>
+          </Link>))}
+
+      </div>
+    </div>
+          </Page>
+
+
+          <Page number={18}>
+          <div>
+      
+      <h4 className="page-header">Mes recettes</h4>
+      <div className="page" ref={this.ref}>
+      {data.recipe.slice(14,15).map((data) => (
+
+          <Link to={`/recipe/${data.id}`}>
+
+          <div className="recipe-content">
+            <div className="info-recipe">
+              <h5 className="page-title">{data.name}</h5>
+              <div className="page-infos"> <p>Préparation : {data.prepare_time} </p>
+              <p>Cuisson : {data.cooking_time} </p>
+              <p>Pour {data.part_number} {data.part_type}</p>  
+              </div>                         
+              <div className="image-recipe"><img src={data.image} className="imgRecipe"/></div>
+            </div>
+
+</div>
+          </Link>))}
+
+      </div>
+    </div>
+          </Page>
+
+
+          <Page number={19}>
+          <div>
+      
+      <h4 className="page-header">Mes recettes</h4>
+      <div className="page" ref={this.ref}>
+      {data.recipe.slice(15,16).map((data) => (
+
+          <Link to={`/recipe/${data.id}`}>
+
+          <div className="recipe-content">
+            <div className="info-recipe">
+              <h5 className="page-title">{data.name}</h5>
+              <div className="page-infos"> <p>Préparation : {data.prepare_time} </p>
+              <p>Cuisson : {data.cooking_time} </p>
+              <p>Pour {data.part_number} {data.part_type}</p>  
+              </div>                         
+              <div className="image-recipe"><img src={data.image} className="imgRecipe"/></div>
+            </div>
+
+</div>
+          </Link>))}
+
+      </div>
+    </div>
+          </Page>
+
+
+          <Page number={20}>
+          <div>
+      
+      <h4 className="page-header">Mes recettes</h4>
+      <div className="page" ref={this.ref}>
+      {data.recipe.slice(16,17).map((data) => (
+
+          <Link to={`/recipe/${data.id}`}>
+
+          <div className="recipe-content">
+            <div className="info-recipe">
+              <h5 className="page-title">{data.name}</h5>
+              <div className="page-infos"> <p>Préparation : {data.prepare_time} </p>
+              <p>Cuisson : {data.cooking_time} </p>
+              <p>Pour {data.part_number} {data.part_type}</p>  
+              </div>                         
+              <div className="image-recipe"><img src={data.image} className="imgRecipe"/></div>
+            </div>
+
+</div>
+          </Link>))}
+
+      </div>
+    </div>
+          </Page>
+
+
+          <Page number={21}>
+          <div>
+      
+      <h4 className="page-header">Mes recettes</h4>
+      <div className="page" ref={this.ref}>
+      {data.recipe.slice(17,18).map((data) => (
+
+          <Link to={`/recipe/${data.id}`}>
+
+          <div className="recipe-content">
+            <div className="info-recipe">
+              <h5 className="page-title">{data.name}</h5>
+              <div className="page-infos"> <p>Préparation : {data.prepare_time} </p>
+              <p>Cuisson : {data.cooking_time} </p>
+              <p>Pour {data.part_number} {data.part_type}</p>  
+              </div>                         
+              <div className="image-recipe"><img src={data.image} className="imgRecipe"/></div>
+            </div>
+
+</div>
+          </Link>))}
+
+      </div>
+    </div>
+          </Page>
+
+
+          <Page number={22}>
+          <div>
+      
+      <h4 className="page-header">Mes recettes</h4>
+      <div className="page" ref={this.ref}>
+      {data.recipe.slice(18,19).map((data) => (
+
+          <Link to={`/recipe/${data.id}`}>
+
+          <div className="recipe-content">
+            <div className="info-recipe">
+              <h5 className="page-title">{data.name}</h5>
+              <div className="page-infos"> <p>Préparation : {data.prepare_time} </p>
+              <p>Cuisson : {data.cooking_time} </p>
+              <p>Pour {data.part_number} {data.part_type}</p>  
+              </div>                         
+              <div className="image-recipe"><img src={data.image} className="imgRecipe"/></div>
+            </div>
+
+</div>
+          </Link>))}
+
+      </div>
+    </div>
+          </Page>
+
+          <Page number={23}>
+          <div>
+      
+      <h4 className="page-header">Mes recettes</h4>
+      <div className="page" ref={this.ref}>
+      {data.recipe.slice(19,20).map((data) => (
+
+          <Link to={`/recipe/${data.id}`}>
+
+          <div className="recipe-content">
+            <div className="info-recipe">
+              <h5 className="page-title">{data.name}</h5>
+              <div className="page-infos"> <p>Préparation : {data.prepare_time} </p>
+              <p>Cuisson : {data.cooking_time} </p>
+              <p>Pour {data.part_number} {data.part_type}</p>  
+              </div>                         
+              <div className="image-recipe"><img src={data.image} className="imgRecipe"/></div>
+            </div>
+
+</div>
+          </Link>))}
+
+      </div>
+    </div>
+          </Page>
+
+
+          <Page number={24}>
+          <div>
+      
+      <h4 className="page-header">Mes recettes</h4>
+      <div className="page" ref={this.ref}>
+      {data.recipe.slice(20,21).map((data) => (
+
+          <Link to={`/recipe/${data.id}`}>
+
+          <div className="recipe-content">
+            <div className="info-recipe">
+              <h5 className="page-title">{data.name}</h5>
+              <div className="page-infos"> <p>Préparation : {data.prepare_time} </p>
+              <p>Cuisson : {data.cooking_time} </p>
+              <p>Pour {data.part_number} {data.part_type}</p>  
+              </div>                         
+              <div className="image-recipe"><img src={data.image} className="imgRecipe"/></div>
+            </div>
+
+</div>
+          </Link>))}
+
+      </div>
+    </div>
+          </Page>
+
+
+          <Page number={25}>
+          <div>
+      
+      <h4 className="page-header">Mes recettes</h4>
+      <div className="page" ref={this.ref}>
+      {data.recipe.slice(21,22).map((data) => (
+
+          <Link to={`/recipe/${data.id}`}>
+
+          <div className="recipe-content">
+            <div className="info-recipe">
+              <h5 className="page-title">{data.name}</h5>
+              <div className="page-infos"> <p>Préparation : {data.prepare_time} </p>
+              <p>Cuisson : {data.cooking_time} </p>
               <p>Pour {data.part_number} {data.part_type}</p>  
               </div>                         
               <div className="image-recipe"><img src={data.image} className="imgRecipe"/></div>

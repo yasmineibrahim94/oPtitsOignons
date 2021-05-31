@@ -130,3 +130,75 @@ font-weight: bold;
 padding: 2%;
 margin-top: 30%;
 font-size: 1.5em;}
+
+@media only screen and (max-width: 481px) {
+.recipe_info2, .recipe_details, .recipe_name {display: flex;
+flex-direction: column;
+align-items: left;
+width: 100%;}
+
+.recipe_name {
+  margin-top: 20%; 
+width: 80%;
+font-size: 1.2em;
+padding: 5%;
+}
+
+.recipe_info1 {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding: 5%;
+}
+.recipe_part {
+  width: 15%;
+  margin-right: 2%;
+}
+
+.recipe_type {
+  width: 70%;
+  font-weight: bold;
+}
+
+.recipe_p {
+  width: 30%;
+margin-top: 5%;}
+
+  .recipe_select {
+    width: 50%;
+    margin: 2%;
+  }
+
+  .recipe_label{
+    width: 100%;
+  }
+
+  .recipe_prepare_time, .recipe_cooking_time {
+    width: 90%;
+    margin-right: 5%;
+  }
+
+  .recipe_time{
+    margin-top: 5%;
+  }
+
+  .recipe_info3 {display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.label_quantity {
+  width: 17%;
+}
+
+.label_mesure {
+  width: 50%;
+}
+
+.recipe_textarea {
+  width: 90%;
+}
+}
+
+
+

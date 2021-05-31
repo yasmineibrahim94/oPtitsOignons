@@ -133,7 +133,7 @@ class RecipeFlip extends React.Component {
               </Page>
               <Page number={2}>
                 <div className="Detail_Recipe_step">
-                <div dangerouslySetInnerHTML={{__html: this.state.recipe.description}} />                
+                <div className="recipe_step" dangerouslySetInnerHTML={{__html: this.state.recipe.description}} />                
                 </div>
               </Page>
              

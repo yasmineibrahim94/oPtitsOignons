@@ -99,3 +99,18 @@
   text-transform: uppercase;
 }
 
+@media only screen and (max-width: 481px) {
+  .dessertBook, .dishBook, .starterBook, .createProfilBook, .myAccountBook, .logoutBook, .shoppingListBook, .myRecipesBook {
+width: 100%; 
+height: 10rem;
+font-size: 1em;
+ }
+
+ .ShelfCategory, .ShelfMyAccount {
+  border-top: solid 20px #3A2C2B;
+height: 30%;
+ }
+
+
+}
+

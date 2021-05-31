@@ -75,7 +75,7 @@ class MyRecipesFlip extends React.Component {
           onFlip={this.onPage}
           onChangeOrientation={this.onChangeOrientation}
           onChangeState={this.onChangeState}
-          className="flip-book"
+          className="flip-book_my_recipe"
           ref={(el) => (this.flipBook = el)}
         >
 

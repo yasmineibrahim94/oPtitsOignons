@@ -13,7 +13,6 @@
   
   .login_loginForm
 {background-size: contain;
-
 background-image: url(https://camillesourget.com/upload/images/boeckler-rel3-UxA0U.jpg);
   background-repeat: no-repeat;
   background-position: center; 
@@ -22,7 +21,7 @@ background-image: url(https://camillesourget.com/upload/images/boeckler-rel3-UxA
   flex-direction: column;
   align-items: center;
   padding-top: 15em;
-  padding-bottom: 15em;
+  padding-bottom: 13em;
 }
 
   .loginForm_pseudo, .loginForm_password {
@@ -66,9 +65,10 @@ font-size: 1.4em;
 }
 
 
-  @media only screen and (max-width: 820px) {
+  @media only screen and (max-width: 481px) {
     .login_loginForm{background-size: 100%;
     padding: 2em; 
+    font-size: 0.7em;
     }
 
     .loginForm_pseudo, .loginForm_password {margin-left: 2em; height: 1em;}
@@ -82,9 +82,4 @@ font-size: 1.4em;
     }
   }
   
-  /* Medium devices (landscape tablets, 768px and up) */
-  @media only screen and (max-width: 1024px) {
-    .login_loginForm{background-size: 100%;
-      padding: 5em;
-    }
-  }
+
