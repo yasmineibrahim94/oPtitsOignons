@@ -2,6 +2,7 @@
 const User = require('../models/user');
 const userMapper = require("../models/userMapper");
 const categoryMapper = require("../models/categoryMapper");
+const groceryMapper = require("../models/groceryMapper");
 const emailValidator = require('email-validator');
 const bcrypt = require('bcrypt');
 
@@ -55,7 +56,12 @@ const userController = {
             console.log('theUser', theUser)
 
             await userMapper.save(theUser);
-            response.json(theUser);
+            console.log("the user ", theUser);
+
+            const titleList = "Ma liste de couse";
+            
+            const groceryList = await groceryMapper.createList(theUser.id, titleList );
+            response.json({theUser, groceryList});
 
         } catch (err) {
             response.status(404).json(err.message);
@@ -70,8 +76,6 @@ const userController = {
     // Permet de se connecter
     login: async (request, response) => {
         try {
-            console.log("req.body",request.body);
-            console.log("req.cookie login",response.cookie);
             // on tente de récupérer l'utilisateur qui possède l'email donné
             const user = await userMapper.verify(request.body.email);
 
@@ -85,14 +89,13 @@ const userController = {
                 return response.status(403).json("mauvais mot de passe")
             }
             // si tout va bien, on met l'utilisateur en session...
-            request.session.user = user; 
-            request.session.user.cookie = request.sessionID;
+            request.session.user = user;
             //... mais on supprime son mdp !
             delete request.session.user.password;
-            console.log("loginC",user)
-            console.log('request.session.user', request.session.user)
+            // console.log("loginC",user)
+            // console.log('request.session.user', request.session.user)
             const message = "vous etes connecté"
-            return response.json({user, message});
+            return response.json({user, message, cookie: JSON.stringify(request.cookies)});
 
         } catch (err) {
             console.trace(err);
@@ -166,8 +169,6 @@ const userController = {
      */
     usersRecipe: async (request, response) => {
         //const { id } = request.params;
-        console.log("request.session recipe", request.session.user)
-        console.log("request.cookie recipe", request.cookie)
         if (!request.session.user){
             return response.json("pour accéder à vos recettes merci de vous logger");
         } 

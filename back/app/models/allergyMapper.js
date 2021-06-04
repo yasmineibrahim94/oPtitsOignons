@@ -1,7 +1,6 @@
 
 const db = require('../database');
 
-
 const allergyMapper = {
 
 getAllAllergies: async () => {
@@ -15,7 +14,7 @@ getAllAllergies: async () => {
         const allergies = rows;
 
         if (!allergies) {
-            throw new Error("Aucune allergies trouvée");
+            throw new Error(`no allergy found`);
         } else {
             return allergies;
         }

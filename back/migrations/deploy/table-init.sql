@@ -29,11 +29,10 @@ CREATE TABLE allergy (
 
 CREATE TABLE ingredient (
     id int GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    label text UNIQUE NOT NULL,
+    label text NOT NULL,
     "image" text,
-    "type" text NOT NULL,
     mesure_unit text NOT NULL,
-    allergy_id int REFERENCES allergy(id)
+    allergy_id int REFERENCES allergy(id) DEFAULT(null)
 );
 
 CREATE TABLE recipe (
@@ -47,7 +46,8 @@ CREATE TABLE recipe (
     "share" boolean NOT NULL,
     category_id int REFERENCES category(id),
     "user_id" int REFERENCES "user"(id),
-    "description" text
+    "description" text,
+    difficulty_id INT REFERENCES difficulty(id)
 );
 
 CREATE TABLE review (
@@ -62,7 +62,7 @@ CREATE TABLE review (
 CREATE TABLE quantity (
     id int GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     ingredient_id int REFERENCES ingredient(id),
-    recipe_id int  REFERENCES ingredient(id),
+    recipe_id int REFERENCES recipe(id),
     quantity float NOT NULL
 );
 

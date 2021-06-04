@@ -4,7 +4,7 @@ const express = require('express');
 const session = require('express-session');
 const router = require('./app/router');
 const cors = require('cors');
-
+const cookieParser = require('cookie-parser')
 const app = express();
 
 
@@ -20,7 +20,8 @@ options.swaggerDefinition.host = `api-cuisine.herokuapp.com` || `localhost:${por
 expressSwagger(options);
 
 // **mise en place et configuration de la session
-const expiryDate = new Date( Date.now() + 120 * 60 * 1000 ); // 2 hour
+
+app.use(cookieParser())
 
 app.use(session({
     name: 'session',
@@ -29,11 +30,10 @@ app.use(session({
     secret: 'enisiuc',
     cookie: {
         secure: false,
-        expires: expiryDate
+        maxAge: 120 * 120 * 1000,
+        sameSite: "none"
     }
 }));
-
-
 
 // **rendre disponible dans toutes les vues, l'éventuel utilisateur connecté
 app.use((req, res, next) => {
@@ -50,17 +50,19 @@ app.use((req, res, next) => {
 
 // le parser JSON qui récupère le payload quand il y en a un et le transforme en objet JS disponible sous request.body
 app.use(express.json());
-
 app.use(cors({
-    
-    origin: ( "http://localhost:8080" ),
+
+    origin: ("http://localhost:8080"),
+    exposedHeaders: ['set-cookie'],
     credentials: true,
-    
+
 }));
 app.use("/api", router);
 
+
+
 app.listen(port, () => {
     console.log(
-      `Listening on ${process.env.PROTOCOL}://${process.env.DOMAINNAME}:${port}`
+        `Listening on ${process.env.PROTOCOL}://${process.env.DOMAINNAME}:${port}`
     );
-  });
+});

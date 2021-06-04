@@ -1,7 +1,7 @@
 /**
  * @typedef Category
  * @class
- * @property {string} name - the name of the category 
+ * @property {string} name.required - the name of the category 
  */
 class Category {
     id;

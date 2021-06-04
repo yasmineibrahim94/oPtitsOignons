@@ -2,9 +2,6 @@
 
 BEGIN;
 
-ALTER TABLE "user" 
-DROP COLUMN grocery_list_id;
-
 DROP TABLE grocery_item, grocery_list ;
 
 COMMIT;

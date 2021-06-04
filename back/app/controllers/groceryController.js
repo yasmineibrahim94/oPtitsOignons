@@ -12,7 +12,7 @@ const groceryController = {
         const {id} = request.session.user;
 
         
-       //const { id } = request.params;
+        //const { id } = request.params;
         const {name }= request.body;
 
         try {

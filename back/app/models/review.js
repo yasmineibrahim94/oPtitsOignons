@@ -12,9 +12,15 @@ class Review {
     content;
     rate;
     date;
-    user_id;
-    recipe_id;
+    userId;
+    recipeId;
 
+    set user_id(val){
+        this.userId = val
+    };
+    set recipe_id(val){
+        this.recipeId = val
+    };
 
     constructor(data) {
         for (const prop in data) {

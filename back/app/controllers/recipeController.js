@@ -5,8 +5,8 @@ const recipeController = {
 
   // Permet de récuperer une recette
   recipe: async (request, response) => {
-    console.log('request.session.user', request.session);
-    console.log('cookie', request.headers.cookie);
+    // console.log('request.session.user', request.session);
+    // console.log('cookie', request.headers.cookie);
     const theRecipe = request.params.id;
     //console.log(theRecipe);
     try {
@@ -23,7 +23,7 @@ const recipeController = {
           year:  'numeric',
       });
       };
-      
+
       response.json(recipe);
 
     } catch (err) {
@@ -72,7 +72,10 @@ const recipeController = {
       response.status(404).json(err.message);
     }
   },
-
+  
+  /** 
+   * copy the recipe from an other user
+   */
   copy: async (request, response) => {
 
     if (!request.session.user){
@@ -111,7 +114,10 @@ isPublic: async (request , response) => {
 
 },
 
-
+  /**
+   * change the visibility of the recipe
+   * @returns {response.json}
+   */
   changeStatus: async (request, response) => {
     if (!request.session.user){
       return response.json("pour accéder à vos recettes merci de vous logger");

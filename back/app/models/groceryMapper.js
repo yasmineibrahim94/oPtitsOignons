@@ -1,4 +1,5 @@
 const db = require('../database');
+const Grocery  = require('../models/grocery');
 
 const groceryMapper = {
 
@@ -7,7 +8,7 @@ const groceryMapper = {
         const query = `
         INSERT INTO "grocery_list" (user_id, name)
         VALUES ($1, $2) RETURNING *;
-         
+        
         `;
         try {
             const { rows } = await db.query(query, [id, name]);
@@ -21,23 +22,44 @@ const groceryMapper = {
 
     findList: async (id) => {
         console.log(id)
+        try {
+            
         const query = `
-        SELECT DISTINCT grocery_list.id, 
+        SELECT DISTINCT grocery_list.id as list_id, 
         grocery_list."name",
-        array_agg(grocery_item.id) as item_id ,
-        array_agg(grocery_item.name 
-            ORDER BY grocery_item.name ) as item
+        jsonb_object_agg(grocery_item.name, grocery_item.id) as items
+        /* array_agg(grocery_item.name) as item */
         FROM grocery_list
         LEFT OUTER JOIN grocery_item ON grocery_item.grocery_list_id = grocery_list.id
         WHERE grocery_list.user_id = $1
+        AND grocery_item.name IS NOT NULL
         GROUP BY grocery_list.name, grocery_list.id;
         `;
 
-        try {
-            const { rows } = await db.query(query, [id]);
-            list = rows;
-            return list;
+        
 
+            const { rows } = await db.query(query, [id]);
+            const list = rows;
+
+            if (rows[0] === undefined) {
+
+                const query = `
+                    SELECT DISTINCT grocery_list.id as list_id, 
+                    grocery_list."name",
+                    array_agg(grocery_item.name) as items
+                    FROM grocery_list
+                    LEFT OUTER JOIN grocery_item ON grocery_item.grocery_list_id = grocery_list.id
+                    WHERE grocery_list.user_id = $1
+                    GROUP BY grocery_list.name, grocery_list.id;
+                    `;
+                const { rows } = await db.query(query, [id]);
+                const list = rows;
+                return new Grocery(list);
+                // return list;
+            } else {
+                return new Grocery(list);
+                // return list;
+            }
         } catch (err) {
             throw new Error(err.message);
         }
@@ -63,6 +85,7 @@ const groceryMapper = {
             throw new Error(err.message);
         }
     },
+
     delAllList: async (userId) => {
         const data = [userId]; //user id
         try {
@@ -84,9 +107,8 @@ const groceryMapper = {
         }
     },
 
-
     addItemTolist: async (id, name, userId) => {
-        const data = [ name, id]
+        const data = [name, id]
         try {
             const qry = `
             INSERT INTO "grocery_item" (name, grocery_list_id)
@@ -105,7 +127,7 @@ const groceryMapper = {
 
     items: async (id, userId) => {
 
-        const data = [ id ];
+        const data = [id];
         console.log('data', data)
         try {
             const query = `

@@ -21,7 +21,7 @@ const reviewMapper = {
             reviews = rows;
 
             if (!reviews[0]) {
-                return "Aucun commentaire pour cette recette.";
+                throw new Error(`no review for this recipe`);
             } else {
                 return reviews;
             }
@@ -43,7 +43,7 @@ const reviewMapper = {
             const { rows } = await db.query(qry, data);
             reviews = rows;
             if (!reviews[0]) {
-                return "Aucun commentaire pour cette personne.";
+                throw new Error(`no review for this user`);
             } else {
                 return reviews;
             }
@@ -58,7 +58,7 @@ const reviewMapper = {
     */
     save: async (theReview) => {
 
-        // toutes les données en commun sont préparées
+        // prepare all user's data
         const data = [
             theReview.content,
             theReview.rate,

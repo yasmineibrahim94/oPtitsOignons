@@ -1,16 +1,16 @@
 
 const db = require('../database');
-const recipeSchema = require('../schemas/recipe');
+const Recipe = require('../models/recipe');
 
 const recipeMapper = {
     /**
          * find one recipe
-         * @param {number} theRecipe - the id of the recipe
+         * @param {number} id - the id of the recipe
          * @returns {Array} json
          */
-    getRecipe: async (theRecipe) => {
+    getRecipe: async (id) => {
 
-        const data = [theRecipe];
+        const data = [id];
         const qry = ` SELECT DISTINCT 
                         recipe.*, 
                         difficulty.label as difficulty ,
@@ -19,30 +19,43 @@ const recipeMapper = {
                         array_agg(ingredient.mesure_unit) as mesure_unit,
                         array_agg(quantity.quantity ) as quantity, 
                         array_agg(allergy.label ) as allergie ,
-                        array_agg(allergy.id) as allergie_id
+                        array_agg(allergy.id) as allergie_id,
+                        ROUND(AVG(review.rate)) as rate
                     FROM recipe
                     LEFT OUTER JOIN quantity ON recipe.id = quantity.recipe_id
                     LEFT OUTER JOIN ingredient ON ingredient.id = quantity.ingredient_id
                     LEFT OUTER JOIN allergy ON allergy.id = ingredient.allergy_id
                     LEFT OUTER JOIN difficulty ON difficulty.id = recipe.difficulty_id
+                    LEFT OUTER JOIN review ON recipe.id = review.recipe_id
                     WHERE recipe.id = $1
                     GROUP BY recipe.id, difficulty.label;`;
 
         const query = `SELECT * FROM review WHERE recipe_id = $1;`;
 
         try {
-
+            
             let { rows } = await db.query(qry, data);
             recipe = rows[0];
+            // console.log(recipe)
+
+            if (!recipe) {
+                throw new Error(`No recipe for the id => ${id}`);
+            }
 
             const reviews = await db.query(query, data);
-            recipe.reviews = reviews.rows
-            
-            if (!recipe) {
-                throw new Error("Aucune recette trouvée.");
+
+            if (reviews[0]) {
+                recipe.reviews = reviews.rows
             } else {
-                return recipe;
-            }
+                recipe.reviews = "no reviews"
+            };
+
+            if (!rows[0].rate) {
+                recipe.rate = "no rate"
+            };
+
+            return new Recipe(recipe);
+            // return recipe;
 
         } catch (err) {
             throw new Error(err.message);
@@ -59,16 +72,16 @@ const recipeMapper = {
         } else {
             where = 'WHERE share = true'
         };
-        
+
         const qry = ` SELECT DISTINCT 
                             recipe.*, 
                             difficulty.label as difficulty ,
                             array_agg(ingredient.label) as ingredient,
-                            array_agg(ingredient.mesure_unit ) as mesure_unit,
-                            array_agg(quantity.quantity ) as quantity, 
-                            array_agg(allergy.label ) as allergie,
+                            array_agg(ingredient.mesure_unit) as mesure_unit,
+                            array_agg(quantity.quantity) as quantity, 
+                            array_agg(allergy.label) as allergie,
                             array_agg(allergy.id) as allergie_id,
-                            ROUND(AVG(review.rate))
+                            ROUND(AVG(review.rate)) as rate
                         FROM recipe
                         LEFT OUTER JOIN quantity ON recipe.id = quantity.recipe_id
                         LEFT OUTER JOIN ingredient ON ingredient.id = quantity.ingredient_id
@@ -81,14 +94,14 @@ const recipeMapper = {
 
         try {
             const { rows } = await db.query(qry);
-            recipes = rows;
-            console.log(recipes)
-            if (!recipes) {
-                return "pas encore de recette sur ce site";
-            } else {
-                return recipes;
-            }
+            const recipes = rows;
 
+            if (!recipes) {
+                throw new Error("pas encore de recette sur ce site");
+            } else {
+
+                return recipes.map(recipe => new Recipe(recipe));
+            }
 
         } catch (err) {
             throw new Error(err.message);
@@ -107,9 +120,10 @@ const recipeMapper = {
             const recipes = await recipeMapper.getAllRecipes(isSharing);
             //console.log(recipes)
             if (!recipes) {
-                return "aucune recette publique";
+                throw new Error("no public recipes");
             } else {
-                return recipes;
+                return new Recipe(recipe);
+                // return recipes;
             }
         } catch (err) {
             throw new Error(err.message);
@@ -119,11 +133,10 @@ const recipeMapper = {
     /**
      * add new recipe     
      * @param {Object} theRecipe - the recipeModel in request.body
-     * ! a modifier
+     * @param {Array} ingredient - the ingredients of the recipe
     */
     save: async (theRecipe, ingredient) => {
-        // therecipe = les infos dez la table recette
-        // toutes les données en commun sont préparées
+        // therecipe = all recipe info for the db table
         const data = [
             theRecipe.name,
             theRecipe.prepare_time,
@@ -141,8 +154,8 @@ const recipeMapper = {
         // on boucle sur les ingredients
         for (let i = 0; i < ingredient[0].length; i++) {
             ingredients.push([ingredient[0][i], ingredient[1][i], ingredient[2][i], ingredient[3][i]]);
-
         }
+
         try {
             const qry = ` 
                 INSERT INTO recipe (name, prepare_time, cooking_time, image, part_number, part_type, share, category_id, user_id, description, difficulty_id)
@@ -178,8 +191,6 @@ const recipeMapper = {
 
             }
 
-
-
             return recipeMapper.getRecipe(theRecipe.id);
 
         } catch (err) {
@@ -187,9 +198,12 @@ const recipeMapper = {
         }
 
     },
-
+    /**
+     * copy the recipe from an other user
+     * @param {Number} recipeId 
+     * @param {Number} userid 
+     */
     copyRecipe: async (recipeId, userid) => {
-
 
         // id = id de la recette
         // data = les ingredients
@@ -218,6 +232,11 @@ const recipeMapper = {
         await recipeMapper.save(recipe, ingredient);
 
     },
+    /**
+     * update the public visibility of the recipe
+     * @param {Number} id - the is of the recipe
+     * @param {Boolean} share - the visibility of the recipe
+     */
     update: async (id, share) => {
 
         const query = `
@@ -236,9 +255,12 @@ const recipeMapper = {
         }
 
     },
+
     /**
      * update the recipe dynamically
-     * ! retaravailler la fonction pour la faire en 1 requete
+     * @param {Number} id - the id of the recipe
+     * @param {Object} data - the recipe's items to modify
+     * @returns {Array} the new recipe
      */
     updateRecipe: async (id, data) => {
 
@@ -301,32 +323,32 @@ const recipeMapper = {
         }
     },
 
-    patch : async (recipeId, userId,  data) => {
+    patch: async (recipeId, userId, data) => {
 
         try {
-            
-        // Old values of the recipe
-        let originalRecipe = await recipeMapper.getRecipe(recipeId);
 
-        console.log(originalRecipe.user_id,userId );
+            // Old values of the recipe
+            let originalRecipe = await recipeMapper.getRecipe(recipeId);
 
-        if (originalRecipe.user_id != userId) {
+            console.log(originalRecipe.user_id, userId);
 
-            return 'Vous n\'êtes pas le propiétaire de cette recette';
-        }
+            if (originalRecipe.user_id != userId) {
 
-        // New values of the recipe          
-        const {ingredient, mesure_unit, allergie_id, quantity } = data;
-         
+                return 'Vous n\'êtes pas le propiétaire de cette recette';
+            }
+
+            // New values of the recipe          
+            const { ingredient, mesure_unit, allergie_id, quantity } = data;
+
             // remove quantity
             await db.query(`DELETE FROM quantity  WHERE recipe_id = $1;`, [recipeId]);
-       
+
             const ingredientId = [];
 
             for (let i = 0; i < ingredient.length; i++) {
-             
-            // remove ingredients
-            await db.query(`DELETE FROM ingredient 
+
+                // remove ingredients
+                await db.query(`DELETE FROM ingredient 
             WHERE id = $1;`, [originalRecipe.ingredient_id[i]]);
 
                 let data = [ingredient[i], mesure_unit[i], allergie_id[i]]
@@ -342,7 +364,7 @@ const recipeMapper = {
             for (let i = 0; i < ingredientId.length; i++) {
                 const query = `INSERT INTO quantity (ingredient_id, recipe_id , quantity)
                 VALUES ($1, $2, $3);`
-                const data = [ingredientId[i], recipeId,  quantity[i]]
+                const data = [ingredientId[i], recipeId, quantity[i]]
                 await db.query(query, data);
             }
 

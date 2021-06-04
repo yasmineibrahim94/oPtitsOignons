@@ -1,7 +1,6 @@
 
 const db = require('../database');
 
-
 const userMapper = {
 
     /**
@@ -73,7 +72,6 @@ const userMapper = {
     */
     save: async (theUser) => {
 
-
         // toutes les données en commun sont préparées
         const data = [
             theUser.email,
@@ -90,10 +88,9 @@ const userMapper = {
             `;
 
         try {
-            // insérer l'user et récupérer son id
+            // insert user and returning his id
             const { rows } = await db.query(qry, data);
 
-            //TODO l'affectation en session à l'user à rajouter
             theUser.id = rows[0].id;
 
         } catch (err) {
@@ -144,7 +141,7 @@ const userMapper = {
             const user = rows[0];
 
             if (!user) {
-                throw new Error("no user for this id => " + id);
+                throw new Error(`no user for this id => ${id}`);
             } else {
                 return user;
             }
@@ -166,7 +163,7 @@ const userMapper = {
             user = rows;
 
             if (!user) {
-                throw new Error("Aucune user trouvée");
+                throw new Error("No user found");
             } else {
                 return user;
             }
@@ -206,7 +203,7 @@ const userMapper = {
             usersRecipe = rows;
 
             if (!usersRecipe) {
-                throw new Error("Aucune user trouvée");
+                throw new Error("No user found");
             } else {
                 return usersRecipe;
             }

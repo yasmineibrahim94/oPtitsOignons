@@ -1,11 +1,6 @@
 %syntax-version=1.0.0
-%project=cuisinedb
+%project=kitchendb
 
 table-init 2021-03-02T13:28:15Z Jean-Francois <jf.arnould07@gmail.com> # create all tables for project
 new-data 2021-03-02T13:37:38Z Jean-Francois <jf.arnould07@gmail.com> # insert fiew data in table
-adding-more-data 2021-03-03T09:50:37Z Jean-Francois <jf.arnould07@gmail.com> # add fiew data for test
 shopping-list 2021-03-04T14:06:30Z Jean-Francois <jf.arnould07@gmail.com> # add new table shopping list
-new-patch-grocery-list 2021-03-05T12:53:34Z Jean-Francois <jf.arnould07@gmail.com> # modification des relations list => user
-fake-full-recipe 2021-03-08T08:12:00Z Jean-Francois <jf.arnould07@gmail.com> # adding facke data full recipe for test
-drop-unique-label-ingredient 2021-03-09T09:57:06Z Jean-Francois <jf.arnould07@gmail.com> # drop unique constraint for the label of ingredient
-drop-unique-items-grocery 2021-03-11T10:21:22Z Jean-Francois <jf.arnould07@gmail.com> # drop the unique constraint in grocery item
