@@ -47,6 +47,7 @@ class CreateRecipe extends Component {
   }; // mesure ingredient 1
 
   onQuantity2 = (e) => {
+
     this.setState({
         quantity2 : e.target.value,
     }); 
@@ -57,6 +58,8 @@ class CreateRecipe extends Component {
       label2: e.target.value,
     });
   }; // name ingredient 2
+
+  
 
   onMesure_unit2 = (e) => {
     this.setState({
@@ -168,9 +171,9 @@ onAddImage = (e) => {
 
   render() {
     // = the visuel
-    
-
     console.log("new recipe");
+
+
     return (
       <div className="recipe_container">
         <Header />
@@ -230,19 +233,22 @@ onAddImage = (e) => {
                     </select></div>
                     
                   <div className="recipe_info3">  
-                  <div className="recipe_time"><label for="prepare_time" className="recipe_label">Temps de preparation :</label>
-<input id="prepare_time"
+                  <div className="md-form mx-5 my-5">
+                  <label for="prepare_time" className="recipe_label">Temps de preparation :</label>
+                  <input type="time" id="inputMDEx1" class="recipe_prepare_time" 
+                  defaultValue="00:00"
                       type="time"
-                      className="recipe_prepare_time"
-                      value={this.state.prepare_time}
+                      outputValue={this.state.prepare_time}
                       onChange={this.onPrepareTime}
-                      min="00:00:00" max="23:59:59" required  /> </div>             
+                   /> </div>          
                     
- 
-                   <div className="recipe_time"> <label for="cooking_time" className="recipe_label">Temps de cuisson :</label>
-                    <input type="time" id="cooking_time"
-                      className="recipe_cooking_time"
-                      value={this.state.cooking_time}
+                    <div className="md-form mx-5 my-5">
+                    <label for="cooking_time" className="recipe_label">Temps de cuisson :</label>
+                   <input type="time" id="inputMDEx1"
+                  defaultValue="00:00"
+                      type="time"
+                      class="recipe_cooking_time"
+                      outputValue={this.state.cooking_time}
                       onChange={this.onCookingTime}
                       required
                     /></div></div></div>
@@ -314,7 +320,10 @@ onAddImage = (e) => {
                       rows="20" cols="80"
                       value={this.state.description}
     onChange={this.onDescription}>
-                    </textarea></div></div>
+                    </textarea>
+                    
+
+                   </div></div>
                  
 
 

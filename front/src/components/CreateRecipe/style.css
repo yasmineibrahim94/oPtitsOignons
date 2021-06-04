@@ -87,9 +87,9 @@ font-size: 1.5em;
 padding-top: 0.5em;}
 
 .recipe_cooking_time, .recipe_prepare_time {
-  width: 40%;
+  width: 100%;
 font-size: 1.2em;
-margin-left: 2%;}
+}
 
 .recipe_h1{
   padding-top: 10%;}
@@ -179,7 +179,7 @@ margin-top: 5%;}
   }
 
   .recipe_prepare_time, .recipe_cooking_time {
-    width: 100%;
+  max-width: 4%;
   }
 
   .recipe_time{
