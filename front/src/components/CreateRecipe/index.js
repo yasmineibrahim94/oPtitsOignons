@@ -7,12 +7,12 @@ import { newRecipe } from "../../services";
 
 // style import
 import "./style.css";
-
+ 
 class CreateRecipe extends Component {
   // initial state of a recipe
   state = {
     name: "",
-    image: "",
+    image: "", 
     difficulty_id: 0,
     prepare_time: "",
     part_number: 0,
@@ -160,7 +160,7 @@ onAddImage = (e) => {
     console.log('data', data);
     //post in back what the user change then redirect to my recipes page
     try {
-      const response = await newRecipe({ description: data.description, prepare_time: data.prepare_time, cooking_time: data.cooking_time, name: data.name, part_number: data.part_number, part_type: data.part_type, category_id: data.category_id, allergy_id: data.allergy_id, share: data.share, difficulty_id: data.difficulty_id, quantity: data.quantity, label: data.label, mesure_unit: data.mesure_unit});
+      const response = await newRecipe({ description: data.description, prepare_time: data.prepare_time, cooking_time: data.cooking_time, name: data.name, part_number: data.part_number, part_type: data.part_type, category_id: data.category_id, allergy_id: data.allergy_id, share: data.share, difficulty_id: data.difficulty_id, label: data.label, mesure_unit: data.mesure_unit, quantity: data.quantity});
       console.log(response);
       this.props.history.push('/user/recipes');
     }
@@ -234,21 +234,21 @@ onAddImage = (e) => {
                     
                   <div className="recipe_info3">  
                   <div className="md-form mx-5 my-5">
-                  <label for="prepare_time" className="recipe_label">Temps de preparation :</label>
+                  <label className="recipe_label">Temps de preparation :</label>
                   <input type="time" id="inputMDEx1" class="recipe_prepare_time" 
                   defaultValue="00:00"
                       type="time"
-                      outputValue={this.state.prepare_time}
+                      outputvalue={this.state.prepare_time}
                       onChange={this.onPrepareTime}
                    /> </div>          
                     
                     <div className="md-form mx-5 my-5">
-                    <label for="cooking_time" className="recipe_label">Temps de cuisson :</label>
+                    <label className="recipe_label">Temps de cuisson :</label>
                    <input type="time" id="inputMDEx1"
                   defaultValue="00:00"
                       type="time"
                       class="recipe_cooking_time"
-                      outputValue={this.state.cooking_time}
+                      outputvalue={this.state.cooking_time}
                       onChange={this.onCookingTime}
                       required
                     /></div></div></div>
