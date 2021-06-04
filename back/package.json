@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yasmineibrahim94/oPtitsOignons"
+    "url": "git+https://github.com/yasmineibrahim94/oPtitsOignons.git"
   },
   "author": "",
   "license": "ISC",
@@ -34,5 +34,9 @@
   },
   "devDependencies": {},
   "keywords": [],
-  "description": ""
+  "description": "An API for managing / creating / sharing cooking recipes",
+  "bugs": {
+    "url": "https://github.com/yasmineibrahim94/oPtitsOignons/issues"
+  },
+  "homepage": "https://github.com/yasmineibrahim94/oPtitsOignons#readme"
 }
