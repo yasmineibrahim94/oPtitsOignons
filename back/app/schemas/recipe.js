@@ -11,7 +11,7 @@ const recipeSchema = Joi.object({
     category_id: Joi.number().integer().positive().required(),
     description: Joi.string().min(20),
     difficulty_id: Joi.number().integer().positive().required(),
-    label: Joi.array().items().allow(null),
+    label: Joi.array().items(Joi.string().allow(null)),
     mesure_unit: Joi.array().items(Joi.string()),
     allergy_id: Joi.array().items(Joi.number().allow(null)),
     quantity: Joi.array().items(Joi.number())
