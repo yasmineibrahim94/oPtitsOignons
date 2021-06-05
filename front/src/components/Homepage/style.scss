@@ -72,7 +72,7 @@
 
 .myRecipesBook{
   width: 80%;
-  background-image: url(https://previews.123rf.com/images/thomaslenne/thomaslenne1303/thomaslenne130300007/18712000-old-book-cover-texture.jpg);
+  background-image: url(https://t4.ftcdn.net/jpg/00/22/19/83/360_F_22198364_OuIZMz9ebnqb3SLtWcLX6lORtwUfdEQr.jpg);
 }
 
 .shoppingListBook {
@@ -97,6 +97,10 @@
   text-align: center;
   font-weight: bold;
   text-transform: uppercase;
+}
+
+.dessertBook:hover, .searchButton:hover, .dishBook:hover, .starterBook:hover, .createProfilBook:hover, .myAccountBook:hover, .logoutBook:hover, .shoppingListBook:hover, .myRecipesBook:hover {
+  color: #D4923F;
 }
 
 @media only screen and (max-width: 481px) {

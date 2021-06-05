@@ -75,7 +75,7 @@ function Search() {
   return (
     <>
      
-     <p>{name}</p>
+     <p className="p_search">{name}</p>
     </>
   );
 };

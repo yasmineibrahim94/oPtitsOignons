@@ -89,14 +89,14 @@ class ListByFlipDish extends React.Component {
           <Link to={`/recipe/${data.id}`}>
 
           <div className="recipe-content">
-          <div className="image-recipe"><img src={data.image} className="imgRecipe"/></div>
+              <div className="image-recipe"><img src={data.image} className="imgRecipe"/></div>
             <div className="info-recipe">
               <h5 className="page-title">{data.name}</h5>
-              <div className="page-infos"> <p>Temps de préparation : {data.prepare_time} </p>
-              <p>Temps de cuisson : {data.cooking_time} </p>
-              <p>Pour {data.part_number} {data.part_type}</p>  
+              <div className="page-infos"> <p className="p_recipe_info">Temps de préparation : {data.prepare_time} </p>
+              <p className="p_recipe_info">Temps de cuisson : {data.cooking_time} </p>
+              <p className="p_recipe_info">Pour {data.part_number} {data.part_type}</p>  
               </div>                         
-              </div>
+            </div>
 
 
 </div>
@@ -117,14 +117,14 @@ class ListByFlipDish extends React.Component {
           <Link to={`/recipe/${data.id}`}>
 
           <div className="recipe-content">
-          <div className="image-recipe"><img src={data.image} className="imgRecipe"/></div>
+              <div className="image-recipe"><img src={data.image} className="imgRecipe"/></div>
             <div className="info-recipe">
               <h5 className="page-title">{data.name}</h5>
-              <div className="page-infos"> <p>Temps de préparation : {data.prepare_time} </p>
-              <p>Temps de cuisson : {data.cooking_time} </p>
-              <p>Pour {data.part_number} {data.part_type}</p>  
+              <div className="page-infos"> <p className="p_recipe_info">Temps de préparation : {data.prepare_time} </p>
+              <p className="p_recipe_info">Temps de cuisson : {data.cooking_time} </p>
+              <p className="p_recipe_info">Pour {data.part_number} {data.part_type}</p>  
               </div>                         
-              </div>
+            </div>
 
 
 </div>
@@ -144,14 +144,14 @@ class ListByFlipDish extends React.Component {
           <Link to={`/recipe/${data.id}`}>
 
           <div className="recipe-content">
-          <div className="image-recipe"><img src={data.image} className="imgRecipe"/></div>
+              <div className="image-recipe"><img src={data.image} className="imgRecipe"/></div>
             <div className="info-recipe">
               <h5 className="page-title">{data.name}</h5>
-              <div className="page-infos"> <p>Temps de préparation : {data.prepare_time} </p>
-              <p>Temps de cuisson : {data.cooking_time} </p>
-              <p>Pour {data.part_number} {data.part_type}</p>  
+              <div className="page-infos"> <p className="p_recipe_info">Temps de préparation : {data.prepare_time} </p>
+              <p className="p_recipe_info">Temps de cuisson : {data.cooking_time} </p>
+              <p className="p_recipe_info">Pour {data.part_number} {data.part_type}</p>  
               </div>                         
-              </div>
+            </div>
 
 
 </div>
@@ -171,14 +171,14 @@ class ListByFlipDish extends React.Component {
           <Link to={`/recipe/${data.id}`}>
 
           <div className="recipe-content">
-          <div className="image-recipe"><img src={data.image} className="imgRecipe"/></div>
+              <div className="image-recipe"><img src={data.image} className="imgRecipe"/></div>
             <div className="info-recipe">
               <h5 className="page-title">{data.name}</h5>
-              <div className="page-infos"> <p>Temps de préparation : {data.prepare_time} </p>
-              <p>Temps de cuisson : {data.cooking_time} </p>
-              <p>Pour {data.part_number} {data.part_type}</p>  
+              <div className="page-infos"> <p className="p_recipe_info">Temps de préparation : {data.prepare_time} </p>
+              <p className="p_recipe_info">Temps de cuisson : {data.cooking_time} </p>
+              <p className="p_recipe_info">Pour {data.part_number} {data.part_type}</p>  
               </div>                         
-              </div>
+            </div>
 
 
 </div>
@@ -198,14 +198,14 @@ class ListByFlipDish extends React.Component {
           <Link to={`/recipe/${data.id}`}>
 
           <div className="recipe-content">
-          <div className="image-recipe"><img src={data.image} className="imgRecipe"/></div>
+              <div className="image-recipe"><img src={data.image} className="imgRecipe"/></div>
             <div className="info-recipe">
               <h5 className="page-title">{data.name}</h5>
-              <div className="page-infos"> <p>Temps de préparation : {data.prepare_time} </p>
-              <p>Temps de cuisson : {data.cooking_time} </p>
-              <p>Pour {data.part_number} {data.part_type}</p>  
+              <div className="page-infos"> <p className="p_recipe_info">Temps de préparation : {data.prepare_time} </p>
+              <p className="p_recipe_info">Temps de cuisson : {data.cooking_time} </p>
+              <p className="p_recipe_info">Pour {data.part_number} {data.part_type}</p>  
               </div>                         
-              </div>
+            </div>
 
 
 </div>

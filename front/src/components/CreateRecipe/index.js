@@ -173,7 +173,6 @@ onAddImage = (e) => {
     // = the visuel
     console.log("new recipe");
 
-
     return (
       <div className="recipe_container">
         <Header />

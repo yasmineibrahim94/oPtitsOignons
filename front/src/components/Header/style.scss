@@ -13,7 +13,12 @@ position: absolute;
 .title{
   margin: 4rem;
   font-size: 4rem;
+  color: #D4923F;
 }
+
+.title:hover{color: #D4B189;}
+
+a{color: #D4B189;}
 
 .whitePlace {padding-bottom: 11em;}
 
@@ -83,7 +88,7 @@ background-color: transparent;
 max-width: 20em;
 text-align: justify;
 font-style: italic;
-color: #DCB991;
+color: #D4923F;
 font-style: italic;
 font-size: 1.5em;
 margin: 0.2em;
@@ -96,12 +101,10 @@ margin-left: 5em;
 #visible{
 visibility: hidden;
 }
-a{color: #693813; font-weight: bold; }
+.link{font-weight: bold; font-size: 1.4em; color: #D4B189;}
 
-a:hover{  color: #DCB991;
-}
+.link:hover{  color: #D4923F;}
 
-.link{color:beige}
 .searchForm_validButton {background-color: transparent;
 box-shadow: black;
 border-style: none;
