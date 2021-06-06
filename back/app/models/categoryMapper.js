@@ -1,5 +1,5 @@
 const db = require('../database');
-const Category  = require('../models/category');
+
 
 const categoryMapper = {
     /**
@@ -17,10 +17,9 @@ const categoryMapper = {
             const categories = rows;
 
             if (!categories) {
-                throw new Error("no category");
+                throw new Error("Aucune catégorie trouvée");
             } else {
-                return categories.map(categorie => new Category(categorie));
-                // return categories;
+                return categories;
             }
         }catch (err) {
             throw new Error(err.message);
@@ -46,10 +45,9 @@ const categoryMapper = {
             const category = rows[0];
 
             if (!category) {
-                throw new Error(`no category id => ${id}`);
+                throw new Error("Aucune catégorie trouvée pour cette id =>" , id);
             } else {
-                return new Category(category);
-                // return category;
+                return category;
             }
         }catch (err) {
             throw new Error(err.message);
@@ -74,10 +72,9 @@ const categoryMapper = {
             const categoryRecipes = rows;
 
             if (!categoryRecipes) {
-                throw new Error(`no recipe for this category id => ${id}`);
+                return "Aucune recette pour cette catégorie id =>" , id;
             } else {
-                return new Category(categoryRecipes);
-                // return categoryRecipes;
+                return categoryRecipes;
             }
         }catch (err) {
             throw new Error(err.message);
@@ -105,10 +102,9 @@ const categoryMapper = {
             const categories = rows;
 
             if (!categories) {
-                throw new Error(`no category found`);
+                return "Aucune catégorie trouvée";
             } else {
-                return new Category(categories);
-                // return categories;
+                return categories;
             }
         }catch (err) {
             throw new Error(err.message);
@@ -118,12 +114,13 @@ const categoryMapper = {
         const query = ` SELECT * 
             FROM "difficulty";
             `
+
         try {
             const { rows } = await db.query(query);
             const difficulty = rows;
 
             if (!difficulty) {
-                throw new Error(`no difficulty found`);
+                throw new Error("Aucune difficulty trouvée");
             } else {
                 return difficulty;
             }

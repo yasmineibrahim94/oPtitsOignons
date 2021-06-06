@@ -2,6 +2,12 @@
 
 BEGIN;
 
+SELECT * FROM "user"
+WHERE id = 1;
+
+SELECT * FROM ingredient
+WHERE id = 1;
+
 SELECT * FROM allergy
 WHERE id = 1;
 

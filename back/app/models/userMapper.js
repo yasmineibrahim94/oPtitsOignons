@@ -88,9 +88,10 @@ const userMapper = {
             `;
 
         try {
-            // insert user and returning his id
+            // insérer l'user et récupérer son id
             const { rows } = await db.query(qry, data);
 
+            //TODO l'affectation en session à l'user à rajouter
             theUser.id = rows[0].id;
 
         } catch (err) {
@@ -141,7 +142,7 @@ const userMapper = {
             const user = rows[0];
 
             if (!user) {
-                throw new Error(`no user for this id => ${id}`);
+                throw new Error("no user for this id => " + id);
             } else {
                 return user;
             }
@@ -163,7 +164,7 @@ const userMapper = {
             user = rows;
 
             if (!user) {
-                throw new Error("No user found");
+                throw new Error("Aucune user trouvée");
             } else {
                 return user;
             }
@@ -203,7 +204,7 @@ const userMapper = {
             usersRecipe = rows;
 
             if (!usersRecipe) {
-                throw new Error("No user found");
+                throw new Error("Aucune user trouvée");
             } else {
                 return usersRecipe;
             }

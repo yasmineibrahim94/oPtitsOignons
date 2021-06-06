@@ -1,5 +1,4 @@
 const db = require('../database');
-const Grocery  = require('../models/grocery');
 
 const groceryMapper = {
 
@@ -40,9 +39,9 @@ const groceryMapper = {
 
             const { rows } = await db.query(query, [id]);
             const list = rows;
-
+            console.log(rows)
             if (rows[0] === undefined) {
-
+                console.log("if")
                 const query = `
                     SELECT DISTINCT grocery_list.id as list_id, 
                     grocery_list."name",
@@ -54,12 +53,13 @@ const groceryMapper = {
                     `;
                 const { rows } = await db.query(query, [id]);
                 const list = rows;
-                return new Grocery(list);
-                // return list;
+                return list;
             } else {
-                return new Grocery(list);
-                // return list;
+                console.log("else")
+                return list;
             }
+
+
         } catch (err) {
             throw new Error(err.message);
         }

@@ -1,7 +1,5 @@
 const express = require('express');
 const router = express.Router();
-
-// all controller we need
 const userController = require('./controllers/userController');
 const recipeController = require('./controllers/recipeController');
 const categoryController = require('./controllers/categoryController');
@@ -10,7 +8,7 @@ const reviewController = require('./controllers/reviewController');
 const groceryController = require('./controllers/groceryController');
 const { validateBody } = require('./services/validator');
 
-// all schemas we need
+
 const {userSchema, updateUser, login} = require('./schemas/user');
 const {recipeSchema,shareSchema,updateRecipe} = require('./schemas/recipe');
 const reviewsSchema = require('./schemas/reviews');
@@ -67,7 +65,6 @@ router.get('/user', userController.findAll);
  * find one users
  * @route GET /user/{id}
  * @group user
- * @param {number} id.path.required - the user id
  * @returns {Response.json} 200 - the user
  * @returns {Product.model}  404 - user do not exist
  */
@@ -112,6 +109,7 @@ router.get('/recipes', recipeController.recipes);
  * find all unser's recipes
  * @route GET /recipes/user
  * @group recipe
+ * @param {number} id.path.required - the unser's recipes id
  * @returns {Response.json} 200 - the unser's recipes
  */
 router.get('/recipes/user', userController.usersRecipe);

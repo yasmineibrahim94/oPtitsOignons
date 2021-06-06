@@ -15,12 +15,8 @@ class User {
     confirmPassword;
     image;
     pseudo;
-    groceryListId;
+    grocery_list_id;
 
-    set grocery_list_id(val){
-        this.groceryListId = val;
-    };
-    
     constructor(data) {
         for (const prop in data) {
             this[prop] = data[prop];
